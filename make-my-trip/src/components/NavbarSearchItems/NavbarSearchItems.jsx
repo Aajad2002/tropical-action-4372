@@ -34,40 +34,40 @@ const links = [
     {
         id: 1,
         to: '/',
-        imgLink: <RiFlightTakeoffLine style={{ margin: "auto", fontSize: 25, padding: 3 }} />,
+        imgLink: <RiFlightTakeoffLine style={{ margin: "auto", fontSize: 30, padding: 3 }} />,
         title: 'Flights'
     },
     {
         id: 2,
-        to: '/hotels',
-        imgLink: <RiHotelLine style={{ margin: "auto", fontSize: 25, padding: 3 }} />,
+        to: '/hotels_home',
+        imgLink: <RiHotelLine style={{ margin: "auto", fontSize: 30, padding: 3 }} />,
         title: 'hotels'
     },
     {
         id: 3,
         to: '/homestays',
-        imgLink: <MdHomeWork style={{ margin: "auto", fontSize: 25, padding: 3 }} />,
+        imgLink: <MdHomeWork style={{ margin: "auto", fontSize: 30, padding: 3 }} />,
         title: 'Villas&Apts'
     },
     {
         id: 4,
         to: '/holidays-india',
         imgLink: <MdHolidayVillage
-            style={{ margin: "auto", fontSize: 25, padding: 3 }}
+            style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
         title: 'Holiday Packages'
     },
     {
         id: 5,
         to: '/railways',
-        imgLink: <BiTrain style={{ margin: "auto", fontSize: 25, padding: 3 }} />,
+        imgLink: <BiTrain style={{ margin: "auto", fontSize: 30, padding: 3 }} />,
         title: 'Trains'
     },
     {
         id: 6,
         to: '/bus-tickets',
         imgLink: <BsBusFront
-            style={{ margin: "auto", fontSize: 25, padding: 3 }}
+            style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
         title: 'Buses'
     },
@@ -75,7 +75,7 @@ const links = [
         id: 7,
         to: '/cabs',
         imgLink: <BsTaxiFrontFill
-            style={{ margin: "auto", fontSize: 25, padding: 3 }}
+            style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
         title: 'Cabs'
     },
@@ -83,7 +83,7 @@ const links = [
         id: 8,
         to: '/visa',
         imgLink: <MdCreditScore
-            style={{ margin: "auto", fontSize: 25, padding: 3 }}
+            style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
         title: 'Visa'
     },
@@ -91,7 +91,7 @@ const links = [
         id: 9,
         to: '/activity',
         imgLink: <FaSkiingNordic
-            style={{ margin: "auto", fontSize: 25, padding: 3 }}
+            style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
         title: 'Activities'
     },
@@ -99,7 +99,7 @@ const links = [
         id: 10,
         to: '/coomercial_airplane',
         imgLink: <GiCommercialAirplane
-            style={{ margin: "auto", fontSize: 25, padding: 3 }}
+            style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
         title: 'Charter flights'
     },

@@ -1,8 +1,8 @@
 import React from "react";
 import "./Navbar.css";
 import NavbarSearchItems from "../NavbarSearchItems/NavbarSearchItems";
-import AeroplaneSearch from "../Aeroplane/AeroplaneSearch";
-function Navbar() {
+import HotelSearch from "../HotelSearch/HotelSearch";
+function NavbarHotel() {
   return (
     <div>
       <div className="wrapper">
@@ -11,7 +11,7 @@ function Navbar() {
         </div>
         <div className="second-box">
           <div style={{ height: "20px" }}>
-            <AeroplaneSearch/>
+            <HotelSearch/>
           </div>
         </div>
       </div>
@@ -19,4 +19,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarHotel;

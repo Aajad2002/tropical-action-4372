@@ -25,7 +25,7 @@ width: 28%;
   grid-template-columns:25% 0% 25% 15% 15% 20% ;
   border: 1px solid gray;
   border-radius: 7px;
-  height: 25vh;
+  height: 20vh;
 }
 .location_opt{
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -49,6 +49,7 @@ width: 28%;
   font-weight: bold;
 }
 .first_bold{
+  margin-top: 1.4rem;
   margin-right:2%;
   font-size:2rem;
   font-weight: bolder;
@@ -117,6 +118,6 @@ width: 28%;
     font-size: 1.2rem;
     border-radius: 14px;
     position: relative;
-    left: 47%;
+    left: 45%;
     margin-top:1vh;
 }
