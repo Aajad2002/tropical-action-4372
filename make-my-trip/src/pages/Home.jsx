@@ -13,7 +13,6 @@ const Home = () => {
     <div className='home'>
       {/* <Header />
       <Navbar/> */}
-      home content
       <MapCarosel1/>
       <MapCarosel2/>
       <Footer/>
