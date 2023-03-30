@@ -1,13 +1,15 @@
-import React,{useState} from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
 
-export default function App() {
-  const[selectedDate,setSelectedDate] = useState(null);
+import "react-datepicker/dist/react-datepicker.css";
+
+// CSS Modules, react-datepicker-cssmodules.css
+// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+
+export const DataCalender = () => {
+  const [startDate, setStartDate] = useState(new Date());
   return (
-    <div className="App">
-     <DatePicker selected={selectedDate} onChange={date=>setSelectedDate(date)} />
-     
-    </div>
+    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
   );
-}
+};
+      

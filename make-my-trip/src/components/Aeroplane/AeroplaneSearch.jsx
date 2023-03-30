@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./AeroplaneSearch.css"
+import { AiOutlineUserAdd } from "react-icons/ai"
+import { AiOutlineUserDelete } from "react-icons/ai"
+import { DataCalender } from './DateCalender';
+import { Link } from '@chakra-ui/react'
 const AeroplaneSearch = () => {
+    const [traveller, setTraveller] = useState(1)
+    console.log((DataCalender().props.selected))
     return (
         <div className='outer_div'>
             <div className='first_div'>
@@ -25,30 +31,51 @@ const AeroplaneSearch = () => {
             <div className='location_select'>
                 <div className='location_opt'>
                     <p>From</p>
-                    <h1 className='first_bold'>Delhi</h1>
-                    <p>DEL,Delhi Airport India</p>
+                    <select className='first_bold'
+                        type="text"
+                        name="from"
+                        placeholder=""
+                    >
+                        <option>select</option>
+                        <option value='Hyderabad'>Hyderabad</option>
+                        <option value='Bangalore'>Bangalore</option>
+                        <option value='Mumbai'>Mumbai</option>
+                        <option value='Delhi'>Delhi</option>
+                        <option value='Chennai'>Chennai</option>
+                    </select>
                 </div>
                 <div>
                     <span className='location_opt_float'>&#8651;</span>
                 </div>
                 <div className='location_opt'>
                     <p>To</p>
-                    <h1 className='first_bold'>Bengaluru</h1>
-                    <p>BLR,Bengaluru Airport India</p>
+                    <select className='first_bold'
+                        type="text"
+                        name="from"
+                        placeholder=""
+                    >
+                        <option>select</option>
+                        <option value='Hyderabad'>Hyderabad</option>
+                        <option value='Bangalore'>Bangalore</option>
+                        <option value='Mumbai'>Mumbai</option>
+                        <option value='Delhi'>Delhi</option>
+                        <option value='Chennai'>Chennai</option>
+                    </select>
                 </div>
                 <div className='location_opt'>
                     <p>Departure </p>
-                    <span className='first_bold'>29</span><span className='second_bold'>Mar'23</span>
-                    <p>wednesday</p>
+                    <div className='second_bold' style={{ paddingTop: "25px" }}><DataCalender /></div>
                 </div>
                 <div className='location_opt'>
                     <p>Return </p>
-                    <span className='first_bold'>29</span><span className='second_bold'>Mar'23</span>
-                    <p>Thursday</p>
+                    <div className='second_bold' style={{ paddingTop: "25px" }}><DataCalender /></div>
                 </div>
                 <div className='location_opt'>
                     <p>Traveller & Class </p>
-                    <span className='first_bold'>1</span><span className='second_bold'>Traveller</span>
+                    <span className='first_bold'>{traveller}</span><span className='second_bold'>Traveller</span><span>&nbsp;&nbsp;</span><span>
+                        <button onClick={() => setTraveller(traveller + 1)}><AiOutlineUserAdd /></button>
+                        /<button onClick={() => setTraveller(traveller - 1)} disabled={traveller == 1}><AiOutlineUserDelete /></button>
+                    </span>
                     <p>Economy/Premium Economy</p>
                     <p style={{ color: "red" }}>Group Bookings Available!</p>
                 </div>
@@ -84,7 +111,10 @@ const AeroplaneSearch = () => {
                         <span>&#8594;</span>Hyderabad</span>
                 </div>
             </div>
+            <Link href="/flight">
             <button className='src_btn'>SEARCH</button>
+                </Link>
+            
         </div>
     );
 }
