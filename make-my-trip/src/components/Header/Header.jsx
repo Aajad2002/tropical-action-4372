@@ -1,8 +1,9 @@
 import React from 'react';
 import './Header.css';
 import { FlagIcon } from "react-flag-kit";
+import logo from "../Essential/logo.png"
 function Header() {
-    const logo = "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png";
+    // const logo = "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png";
     const mybiz = "//imgak.mmtcdn.com/mybiz/assets/images/landing/myBizLogo_light.png";
     const travel = "https://companieslogo.com/img/orig/MMYT-ca98a9f1.png?t=1602681214";
     const flag = <FlagIcon code="IN" size={28} />;
@@ -11,7 +12,7 @@ function Header() {
         <div>
             <div className='header-main'>
                 <div className='header_child'>
-                    <img className='header-img-1' src={logo} alt="yourpic" width='110' />
+                    <img className='header-img-1' src={logo} alt="yourpic" width={130}/>
                 </div>
                 <div className='header_child'>
                     <div className='header_sub'>
