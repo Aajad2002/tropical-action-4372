@@ -3,9 +3,10 @@ import "./AeroplaneSearch.css"
 import { AiOutlineUserAdd } from "react-icons/ai"
 import { AiOutlineUserDelete } from "react-icons/ai"
 import { DataCalender } from './DateCalender';
+import { Link } from '@chakra-ui/react'
 const AeroplaneSearch = () => {
     const [traveller, setTraveller] = useState(1)
-
+    console.log((DataCalender().props.selected))
     return (
         <div className='outer_div'>
             <div className='first_div'>
@@ -110,7 +111,10 @@ const AeroplaneSearch = () => {
                         <span>&#8594;</span>Hyderabad</span>
                 </div>
             </div>
+            <Link href="/flight">
             <button className='src_btn'>SEARCH</button>
+                </Link>
+            
         </div>
     );
 }
