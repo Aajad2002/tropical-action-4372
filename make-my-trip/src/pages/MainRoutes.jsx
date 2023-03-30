@@ -1,17 +1,19 @@
 
 import { Route, Routes } from "react-router-dom";
-import Hotel from "../components/HotelCompo/Hotel";
+import Header from "../components/Header/Header";
 import {SingleProduct} from "../components/MainFlightPages/SingleProduct";
 import Flight from "./Flight";
+import HotelPage from "./HotelPage";
 
-import Home from "./Home";
+
 
 export const MainRoutes=()=>{
     return(
         <Routes>
-    <Route path="/" element={<Home />} />
+    <Route path="/" element={""} />
     <Route path="/flight" element={<Flight/>} />
-    <Route path="/hotels_home" element={<Hotel/>} />  
+    <Route path="/hotels_home" element={""} /> 
+    <Route path="/hotel" element={<HotelPage/>} /> 
     <Route path="/flightbook"
     element={<SingleProduct />}/>
     </Routes>

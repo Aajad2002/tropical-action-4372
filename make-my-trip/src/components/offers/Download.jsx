@@ -1,10 +1,11 @@
 import React from "react";
 import "./OfferSlider.css";
-import appsprite from "../Assets/app-sprite1.jpg";
-import appstore from "../Assets/appstore.jpg";
-import googleplay from "../Assets/googlePlay.jpg";
+import appsprite from "./Assets/app-sprite1.jpg";
+import appstore from "./Assets/appstore.jpg";
+import googleplay from "./Assets/googlePlay.jpg";
 
 const Download = () => {
+  console.log(appsprite)
   return (
     <div className="DownloadPage">
       <div className="downloadDesc">
