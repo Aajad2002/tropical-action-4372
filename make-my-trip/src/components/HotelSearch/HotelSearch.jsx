@@ -22,7 +22,7 @@ const HotelSearch = () => {
             </div>
             <div className='location_select_hotel'>
                 <div className='location_opt_hotel'>
-                    <p>CITY,PROPERTY NAME OR LOCATION</p>
+                    <p>CITY OR LOCATION</p>
                     <select className='first_bold'
                         type="text"
                         name="from"
@@ -46,7 +46,7 @@ const HotelSearch = () => {
                 </div>
                 <div className='location_opt_hotel'>
                     <p>CHECK-OUT </p>
-                    <div className='second_bold_hotel' style={{ paddingTop: "25px" }}><DataCalender /></div>
+                    <div className='second_bold_hotel' style={{ paddingTop: "25px" }}><DataCalender  /></div>
                 </div>
                 <div className='location_opt_hotel'>
                     <p> </p>ROOMS & GUESTS

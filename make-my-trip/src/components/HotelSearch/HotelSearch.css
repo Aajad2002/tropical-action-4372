@@ -34,6 +34,9 @@
     height: 100%;
     /* border: 1px solid black; */
   }
+  .first_bold option{
+    font-size: 16px;
+  }
   .location_opt_float_hotel{
     background-color: white;
     font-size: 2rem;
@@ -47,6 +50,7 @@
   }
   .second_bold_hotel{
     font-weight: bold;
+    /* width: 50px; */
   }
   .first_bold_hotel{
     margin-top: 1.4rem;
@@ -54,6 +58,10 @@
     font-size:2rem;
     font-weight: bolder;
   }
+  /* ---------------edited by aajad------------- */
+/* .checkout{
+  width: 100px;
+} */
   @media only screen and (max-width: 600px) {
     .first_bold_hotel{
       font-size:1rem;

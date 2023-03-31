@@ -17,7 +17,7 @@ useEffect(()=>{
         //  q:searchParams.get("search")
     }
   }
-  axios.get(`http://localhost:8080/Data`,obj).then((res)=>{
+  axios.get(`https://makethejourneyhard.cyclic.app/hotels`,obj).then((res)=>{
      setData(res.data)
   })
 },[location.search])

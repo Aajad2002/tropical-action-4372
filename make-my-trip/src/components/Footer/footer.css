@@ -8,6 +8,7 @@
     margin: auto;
     background-color: FBF9F7;
     padding: 50px;
+    margin-top: -50px;
 }
 .sm{
     font-size: 13px;
@@ -32,6 +33,7 @@ h5{
 }
 .secondFooter>div>div{
     width: 32%;
+    margin-top: -40px;
 }
 .sm2{
     font-size: 12px;

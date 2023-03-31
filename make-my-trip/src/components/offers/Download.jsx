@@ -10,7 +10,7 @@ const Download = () => {
     <div className="DownloadPage">
       <div className="downloadDesc">
         <div className="downloadDescTitle">
-          <img src={appsprite} />
+          <img src={appsprite} alt="1"/>
           <div className="next">
             <h2 className="doTx">Download App Now!</h2>
             <p className="loTx">
@@ -26,8 +26,8 @@ const Download = () => {
       </div>
       <div className="DownloadRight">
         <div className="mid">
-          <img src={googleplay}></img>
-          <img src={appstore}></img>
+          <img src={googleplay} alt="2"/>
+          <img src={appstore} alt="3"/>
         </div>
         <div className="rightScan">
           <img src="https://promos.makemytrip.com/notification/xhdpi/QRCodeDT_QR-code.jpg"></img>

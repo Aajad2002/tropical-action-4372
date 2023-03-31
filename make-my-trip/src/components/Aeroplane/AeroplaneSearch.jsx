@@ -6,7 +6,7 @@ import { DataCalender } from './DateCalender';
 import { Link } from '@chakra-ui/react'
 const AeroplaneSearch = () => {
     const [traveller, setTraveller] = useState(1)
-    console.log((DataCalender().props.selected))
+    // console.log((DataCalender().props.selected))
     return (
         <div className='outer_div'>
             <div className='first_div'>

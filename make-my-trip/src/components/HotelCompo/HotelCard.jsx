@@ -17,9 +17,10 @@ const HotelCard = ({id,HotelName,desc,price,star,rating,image}) => {
         <p>Free Cancellation available at extra charges</p>
     </div>
     <div className="price">
-        <h2>₹{price}</h2>
-        <span>+₹{price}taxes & fees/Per Night</span>
-        <p>No Cost EMI</p>
+      <img src='https://tse1.mm.bing.net/th?id=OIP.kv92UGUM5ytZCcWarJzgrwHaE8&pid=Api&P=0' alt="discount"/>
+        <h2>₹{price}/Per Night</h2>
+        <span>+₹{price}taxes & fees</span><br/>
+        <span>No Cost EMI</span><br/>
         <span>See Hotel For Best deals</span><br/>
         <button>View</button>
     </div>

@@ -71,11 +71,13 @@ function MapCarosel1() {
   return (
     <div style={{ padding: "40px 0px 40px 0px" }}>
       <Box
-        w={"80%"}
+        w={"70%"}
+        borderRadius={"8px"}
         margin={"auto"}
+        marginTop={"-40px"}
         className="App"
         padding={"30px"}
-        boxShadow="rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;">
+        boxShadow=" 0 1px 6px 0 rgba(0, 0, 0, 0.2)">
         <Carousel heading={"Handpicked Collections for You"} data={data} />
       </Box>
     </div>

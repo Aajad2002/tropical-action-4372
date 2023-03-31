@@ -1,6 +1,7 @@
 .SliderWidth {
-  width: 60%;
+  width: 70%;
   margin: 50px auto;
+  border-radius: 8px;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
   padding: 5px;
 }
@@ -65,8 +66,9 @@
 
 /* promotion css */
 .promotion {
-  width: 60%;
+  width: 70%;
   margin: auto;
+  margin-top: -30px;
   justify-content: space-between;
 }
 
@@ -92,10 +94,11 @@
 
 /* Download css */
 .DownloadPage {
-  width: 60%;
+  width: 70%;
   margin: 20px auto;
   display: flex;
   gap: 10px;
+  border-radius: 8px;
   padding: 20px;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2);
 }
