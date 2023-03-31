@@ -89,7 +89,7 @@ const AeroplaneSearch = () => {
                     </span>
                     <span className='back_shadow'>
                         <input type="radio" />
-                        <label>Regular Fares</label>
+                        <label>Regula</label>
                     </span>
                     <span className='back_shadow'>
                         <input type="radio" />
@@ -97,7 +97,7 @@ const AeroplaneSearch = () => {
                     </span>
                     <span className='back_shadow'>
                         <input type="radio" />
-                        <label>Regular Fares</label>
+                        <label>Regular</label>
                     </span>
                     <span className='back_shadow'>
                         <input type="radio" />
@@ -105,7 +105,7 @@ const AeroplaneSearch = () => {
                 </div>
                 <div className='second_div_last'>
                     <span>Trending Search:</span>
-                    <span className='back_shadow'>Chenni
+                    <span className='back_shadow' style={{textAlign:"center"}}>Chenni
                         <span>&#8594;</span>Kuala Lumpur</span>
                     <span className='back_shadow'>Chenni
                         <span>&#8594;</span>Hyderabad</span>
