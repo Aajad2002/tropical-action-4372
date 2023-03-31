@@ -1,6 +1,7 @@
 import { SingleProductDiv } from "./SingleProductStyle"
 import { Link } from '@chakra-ui/react'
 import styled from 'styled-components';
+import {SingleProHeader } from "./SingleProHeader";
 // import { BookingFlightDetails } from "./BookingFlightDetails"
 export function SingleProduct(){
 
@@ -19,11 +20,12 @@ export function SingleProduct(){
         terminal:"Terminal 1"
     }]
     return (
-
+        <>
+        <SingleProHeader/>
         <SingleProductDiv>
             
             <div className="itinerary">
-                <h2>Complete Your Booking</h2>
+                <h2 style={{fontSize:"2rem",fontWeight:"bold"}}>Complete Your Booking</h2>
                 
                 <div className="raw1">
                     <div className="raw1-depart">
@@ -71,7 +73,7 @@ export function SingleProduct(){
                     </div>
                     
                     <div className="add-extra">
-                        <img src="../../../baggage.png" alt="img" />
+                        <img src="https://scontent.fccu13-4.fna.fbcdn.net/v/t39.30808-6/277566723_4990095927764014_2187051679232152421_n.jpg?stp=cp0_dst-jpg_e15_p320x320_q65&_nc_cat=101&ccb=1-7&_nc_sid=110474&_nc_ohc=mpgfaQmpCxEAX8DjGAp&_nc_ht=scontent.fccu13-4.fna&oh=00_AfBo6kPicmR4o4jUZ7SglpiDYWr0fabxfFwPmHv_l-6leg&oe=642B927B" alt="img" />
                         
                         <span>
                             <h3>Add Extra check-in baggage</h3>
@@ -82,39 +84,6 @@ export function SingleProduct(){
                     
                 </div>
                 
-            </div>
-            <div className="donation">
-                <div>
-                    <input type="checkbox" name="" id="" />
-                    <h2>Donate 10 for COVID-19 Relief and Other Charity Initiatives</h2>
-                    <a href="">Terms & Conditions</a>
-                </div>
-                <div>
-                    <div>
-                        <img src="https://imgak.mmtcdn.com/flights/assets/media/dt/review/charity_covid.png" alt="img" />
-                        <div>
-                            <p>Support COVID-19 relief work and safty initiatives.</p>
-                            <a href="">Know More</a>
-                        </div>
-                        
-                    </div>
-                    <div>
-                        <img src="https://imgak.mmtcdn.com/flights/assets/media/dt/review/charity_1.png?v=1" alt="img" />
-                        <div>
-                            <p>Support COVID-19 relief work and safty initiatives.</p>
-                            <a href="">Know More</a>
-                        </div>
-                        
-                    </div>
-                    <div>
-                        <img src="https://imgak.mmtcdn.com/flights/assets/media/dt/review/charity_2.png?v=1" alt="img" />
-                        <div>
-                            <p>Support COVID-19 relief work and safty initiatives.</p>
-                            <a href="">Know More</a>
-                        </div>
-                        
-                    </div>
-                </div>
             </div>
             <div className="fare">
                 <div>
@@ -143,8 +112,9 @@ export function SingleProduct(){
                 <a href="">VIEW POLICY</a>
             </div>
 
-           <Link href="/booking"><div className="continue">Continue</div></Link> 
+           <Link href="/ticket"><div className="continue">Continue</div></Link> 
         </SingleProductDiv>
+        </>
     )
 }
 const H2=styled.h2`

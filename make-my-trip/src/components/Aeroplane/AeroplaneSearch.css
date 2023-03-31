@@ -99,6 +99,18 @@ width: 28%;
   background-color:#BDBDBD;
   border-radius: 3px;
 }
+label {
+  float: left;
+  clear: none;
+  display: block;
+  padding-top: 7px;
+}
+
+input[type=radio]{
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
 @media only screen and (max-width: 600px) {
   .last_opts{
     /* style={{display:"flex", justifyContent:"space-between",padding:"10px"}} */

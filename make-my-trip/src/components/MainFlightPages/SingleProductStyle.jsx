@@ -85,7 +85,7 @@ height: 100vh;
     border-top: 1px  solid #929191;
     border-bottom: 1px  solid #929191;
     padding: 15px;
-    width: 62.8vw;
+    width: 65vw;
     & .raw2-div1{
         height: 40px;
         margin-top:25px;
@@ -176,64 +176,6 @@ height: 100vh;
         }
     }
 
-}
-
-
-//-------------------Donation------------------------------//
-
-
-
-& .donation{
-    width: 63.7vw;
-    position: relative;
-    top: 20px;
-    margin-left: 50px;
-    background-color: white;
-    border-radius: 10px;
-    padding:10px;
-    & :first-child{
-        display: flex;
-
-        & > h2{
-            margin: 0px;
-            margin-right: 30px;
-        }
-        & input{
-            margin: 5px 8px 0px;
-        }
-    }
-    &> :nth-child(2){
-        display: flex;
-        margin-top: 10px;
-        & > div{
-            display: flex;
-            width: 200px;
-            border:1px #e0e0e0 solid;
-            margin-left: 50px;
-            border-radius: 5px;
-            box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-            padding: 10px;
-            & >img{
-                margin-top: 10px;
-                height: 40px;
-                border-radius: 5px;
-            }
-            &>:nth-child(2){
-            display: flex;
-            flex-direction: column;
-            font-size: 15px;
-            & > p{
-                margin: 0px;
-            }
-            & > a{
-                font-size: 10px;
-                color:#26a0ff ;
-                text-decoration: none;
-            }
-        }
-        }
-        
-    }
 }
 
 & .fare{
@@ -336,5 +278,6 @@ height: 100vh;
     border-radius: 20px;
     color: white;
     line-height: 35px;
+   text-align:center;
 }
 `
