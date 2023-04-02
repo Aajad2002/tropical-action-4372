@@ -11,6 +11,7 @@ import SingalHomeStays from "../components/HomeStays/SingalHomstaysPage";
 // import EditData from "../Admin/EditHotelData";
 import AdminHotel from "../Admin/AdminHotel";
 import AdminNav from "../Admin/AdminNav";
+import Payment from "./Payment";
 
 
 export const MainRoutes=()=>{
@@ -21,7 +22,7 @@ export const MainRoutes=()=>{
     <Route path="/flightbook/:id" element={<SingleProduct />}/>
     <Route path="/ticket" element={<FlightTicketData/>} /> 
     <Route path="/review_ticket" element={<AfterBookingPage/>} /> 
-    <Route path="/payment" element={"Please import payment page"} />
+    <Route path="/payment" element={<Payment/>} />
     <Route path="/hotels_home" element={""} /> 
     <Route path="/hotel" element={<HotelPage/>} />
     <Route path="/home_stay_home" element={""}/>

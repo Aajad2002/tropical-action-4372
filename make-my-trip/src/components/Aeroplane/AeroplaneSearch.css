@@ -83,7 +83,7 @@ width: 28%;
 }
 .first_div_last{
   /* style={{display:"grid",gap:"3px", gridTemplateColumns:"repeat(6,1fr)"}} */
-  display: grid;
+  display: flex;
   gap: 0.5rem;
   grid-template-columns: repeat(6,1fr);
   font-size: 0.8rem;
@@ -95,10 +95,10 @@ width: 28%;
   grid-template-columns: repeat(3,1fr);
   font-size: 0.8rem;
 }
-.back_shadow{
+/* .back_shadow{
   background-color:#BDBDBD;
   border-radius: 3px;
-}
+} */
 label {
   float: left;
   clear: none;
@@ -134,4 +134,7 @@ input[type=radio]{
     left: 45%;
     margin-left: 10px;
     margin-top:1vh;
+}
+.labelShow{
+  
 }

@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { getData } from '../../Redux/FlightReducer/action';
+import { Spinner } from '@chakra-ui/react'
 import FlightCard from './FlightCard';
 import { useState } from 'react';
 import FlightPagination from './FlightPagination';
@@ -32,10 +33,10 @@ const AvailFlights = () => {
   }, [search])
 
   if (isLoading) {
-    return <h1>Loading.....</h1>
+    return <h1><Spinner  size='xl'/></h1>
   }
   if (isError) {
-    return <h1>Try again later</h1>
+    return <h1 style={{fontSize:"30px"}}>Try again later</h1>
   }
   return (
     <div style={{ width: "80%"}}>
