@@ -35,7 +35,7 @@ const HomeStayCard = ({id,image,rating,review,name,location,descLocation,descrip
                     fontWeight: "bold",
                     margin: "10px",
                   }}>
-                  1928
+                  {review}
                 </span>
                 {/* <span>(47 Ratings)</span> */}
               </div>

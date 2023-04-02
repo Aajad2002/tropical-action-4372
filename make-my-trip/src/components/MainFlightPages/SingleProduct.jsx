@@ -1,125 +1,311 @@
-import { SingleProductDiv } from "./SingleProductStyle"
-import { Link } from '@chakra-ui/react'
-import styled from 'styled-components';
-import {SingleProHeader } from "./SingleProHeader";
+import booking from "./Image/booking.png";
+import booking2 from "./Image/booking2.png";
+import { SingleProHeader } from "./SingleProHeader";
 // import { BookingFlightDetails } from "./BookingFlightDetails"
-export function SingleProduct(){
+export function SingleProduct() {
+  return (
+    <>
+      <SingleProHeader />
 
-    const FlightDetails =[ {
-        time:"21:03",
-        date:"Fri, 1 Oct 21",
-        place:"New Delhi",
-        airportName:"Indira Gandhi International Airport",
-        terminal:"Terminal 2"
-    },
-    {
-        time:"02:05",
-        date:"Sat, 2 Oct 21",
-        place:"Bengaluru",
-        airportName:"Bengaluru International Airport",
-        terminal:"Terminal 1"
-    }]
-    return (
-        <>
-        <SingleProHeader/>
-        <SingleProductDiv>
-            
-            <div className="itinerary">
-                <h2 style={{fontSize:"2rem",fontWeight:"bold"}}>Complete Your Booking</h2>
-                
-                <div className="raw1">
-                    <div className="raw1-depart">
-                        <h3>DEPART</h3>
-                        <span>Fri 1 Oct</span>
-                    </div>
-                    <div className="raw1-div2">
-                        <h3>DEL-BLR</h3>
-                        <p>Non stop|2 hrs 35 mins|Economy</p>
-                    </div>
-                    <div className="cancellaion">
-                        <h4>Cancellation Fees Apply</h4>
-                    </div>
-                    <h4>Fare Rules</h4>
-                </div>
-                <div className="raw2">
-                    <img src="https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/G8.png?v=7" alt="img" />
-                    <div className="raw2-div1">
-                        <h4>Go First</h4>
-                        <span>G8-119</span>
-                    </div>
-                    {/* <BookingFlightDetails data={FlightDetails[0]}/>
-                    <div className="raw2-div2">2 hrs 35 mins</div>
-                    <BookingFlightDetails data={FlightDetails[1]}/> */}
-                    <div className="raw2-div1" style={{marginRight:"50px"}}>
-                        <h4>Fare Type</h4>
-                        <span>GoFirst</span>
-                    </div>
-                </div>
-                <div className="raw3">
-                    <div>
-                        <div className="raw2-div1">
-                            <h5>BAGGAGE:</h5>
-                            <span>ADULT</span>
-                        </div>
-                        <div className="raw2-div1">
-                            <h5>CHECK IN</h5>
-                            <span>15 Kgs(1 piece only)</span>
-                        </div>
-                        <div className="raw2-div1">
-                            <h5>CABIN</h5>
-                            <span>7 Kgs(1 piece only)</span>
-                        </div>
+      <div
+        style={{
+          width: "80%",
+          height: "auto",
+          border: "1px solid blue",
+          display: "flex",
+          alignItems: "center",
+          margin: "auto",
+          justifyContent: "space-between",
+          marginTop: "20px",
+        }}>
+        {/* Left */}
+        <div
+          style={{
+            width: "75%",
+            height: "680px",
+            boxShadow:
+              "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+          }}>
+          {/* first_Left */}
+          <div
+            style={{
+              width: "95%",
 
-                    </div>
-                    
-                    <div className="add-extra">
-                        <img src="https://scontent.fccu13-4.fna.fbcdn.net/v/t39.30808-6/277566723_4990095927764014_2187051679232152421_n.jpg?stp=cp0_dst-jpg_e15_p320x320_q65&_nc_cat=101&ccb=1-7&_nc_sid=110474&_nc_ohc=mpgfaQmpCxEAX8DjGAp&_nc_ht=scontent.fccu13-4.fna&oh=00_AfBo6kPicmR4o4jUZ7SglpiDYWr0fabxfFwPmHv_l-6leg&oe=642B927B" alt="img" />
-                        
-                        <span>
-                            <h3>Add Extra check-in baggage</h3>
-                            <p>Add Extra check-in baggage to this at a discounted price</p>
-                        </span>
-                        <button>+Add</button>
-                    </div>
-                    
-                </div>
-                
-            </div>
-            <div className="fare">
-                <div>
-                    <h3>Base Fare</h3>
-                    <p>Adult(s)(1X 6623)</p>
-                    <h3 className="basefareprice">&#x20b9;7422</h3>
-                </div>
-                <div>
-                    <h3>Fee & Surcharge</h3>
-                    <h3>&#x20b9; 7422</h3>
-                </div>
-                <div>
-                    <h2>Total Amount</h2> 
-                    <h2>&#x20b9; 7422</h2>    
-                </div>
-            </div>
-            <div className="cancellation">
-                <h5>Cancellation & Date change charges</h5>
-                <div>
-                    <div>
-                        <h6>Cancellation Fees Apply</h6>
-                        <p>A penalty of upto 3800 will be charged by the airline & by MMT based on how close to the departure date you cancel.</p>
-                    </div>
-                    <span> &#x20b9; 3622</span>
-                </div>
-                <a href="">VIEW POLICY</a>
+              margin: "auto",
+              boxShadow:
+                "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+              height: "230px",
+              display: "flex",
+              flexDirection: "column",
+            }}>
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                //   border: "2px solid red",
+                justifyContent: "space-between",
+                marginTop: "10px",
+              }}>
+              <div
+                style={
+                  {
+                    // border: "2px solid pink",
+                  }
+                }>
+                <h2 style={{ padding: "5px" }}>
+                  <span>New Delhi</span>
+                  <span>----</span>
+                  <span>Bengaluru</span>
+                </h2>
+                <p style={{ padding: "5px" }}>
+                  <span style={{ backgroundColor: "#ffedd1", padding: "3px" }}>
+                    Monday, Apr 3
+                  </span>
+                  <span>Non Stop : 2h 55m</span>
+                </p>
+                <p style={{ padding: "5px" }}>
+                  <span style={{ fontWeight: "bold" }}>Go First </span>
+                  <span>G8 119</span>
+                </p>
+              </div>
+              <div
+                style={{
+                  // border: "2px solid pink",
+                  justifyContent: "space-between",
+                }}>
+                <p
+                  style={{
+                    backgroundColor: "#24a091",
+                    marginLeft: "5px",
+                    padding: "2px",
+                    fontSize: "small",
+                  }}>
+                  CANCELLATION FEES APPLY
+                </p>
+                <p style={{ padding: "5px", color: "blue" }}>View Fare Rules</p>
+                <p style={{ padding: "5px" }}>
+                  <span>Economy</span>
+                  <span style={{ color: "#24a091" }}> GoFirst</span>
+                </p>
+              </div>
             </div>
 
-           <Link href="/ticket"><div className="continue">Continue</div></Link> 
-        </SingleProductDiv>
-        </>
-    )
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                //   border: "1px solid yellow",
+                backgroundColor: "#f4f4f4",
+                margin: "10px 0px 10px 0px",
+              }}>
+              <div
+                style={{
+                  width: "57%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  // border: "1px solid yellow",
+                }}>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    padding: "3px",
+                  }}>
+                  <h3>20:25</h3>
+                  <h3>23:20</h3>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    padding: "3px",
+                  }}>
+                  <div
+                    style={{
+                      height: "12px",
+                      width: " 12px",
+                      border: "1px solid grey",
+                      borderRadius: "50%",
+                      display: "inline-block",
+                    }}></div>
+                  <div
+                    style={{
+                      height: "38px",
+                      width: "0px",
+                      border: "1px dashed grey",
+                      marginLeft: "5px",
+                    }}></div>
+                  <div
+                    style={{
+                      height: "10px",
+                      width: " 12px",
+                      border: "1px solid grey",
+                      borderRadius: "50%",
+                      display: "inline-block",
+                    }}></div>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    padding: "3px",
+                  }}>
+                  <p>
+                    <span>New Delhi .</span>
+                    <span>Indira Gandi International Airport, Terminal 2</span>
+                  </p>
+                  <p>2h 55m</p>
+                  <p>
+                    <span>Bengaluru .</span>
+                    <span>Bengaluru International Airport, Terminal 1</span>
+                  </p>
+                </div>
+              </div>
+              <div
+                style={{
+                  width: "40%",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  // border: "1px solid yellow",
+                  backgroundColor: "#f4f4f4",
+                  alignItems: "center",
+                }}>
+                <div style={{ width: "30%" }}>
+                  <p style={{ fontWeight: "bold" }}>Baggage</p>
+                  <p>ADULT</p>
+                </div>
+                <div style={{ width: "30%" }}>
+                  <p style={{ fontWeight: "bold" }}>Check-in</p>
+                  <p>15 kgs (1 piece only)</p>
+                </div>
+                <div style={{ width: "30%" }}>
+                  <p style={{ fontWeight: "bold" }}>Cadin</p>
+                  <p>7Kgs (1 piece only)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              width: "95%",
+              margin: "auto",
+              boxShadow:
+                "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+              height: "200px",
+            }}>
+            <img
+              style={{
+                width: "100%",
+
+                height: "200px",
+              }}
+              src={booking}
+            />
+          </div>
+          <div
+            style={{
+              width: "95%",
+              margin: "auto",
+              boxShadow:
+                "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+              height: "200px",
+            }}>
+            <img
+              style={{
+                width: "100%",
+
+                height: "200px",
+              }}
+              src={booking2}
+            />
+          </div>
+        </div>
+        {/* Right */}
+        <div
+          style={{
+            width: "23%",
+            height: "680px",
+            boxShadow:
+              "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+          }}>
+          <div
+            style={{
+              boxShadow:
+                "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+              width: "90%",
+              margin: "auto",
+              marginTop: "10px",
+            }}>
+            <h2 style={{ width: "90%", margin: "auto", marginBottom: "10px" }}>
+              Fare Summary
+            </h2>
+            <div style={{ width: "90%", margin: "auto" }}>
+              <div
+                style={{
+                  width: "100%",
+                  margin: "auto",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "10px 0px 10px 0px",
+                  borderBottom: "1px solid grey",
+                }}>
+                <p style={{ fontWeight: "bold" }}>Base Fare</p>
+                <p>₹ 5,500</p>
+              </div>
+
+              <div
+                style={{
+                  width: "100%",
+                  margin: "auto",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "10px 0px 10px 0px",
+                  borderBottom: "1px solid grey",
+                }}>
+                <p style={{ fontWeight: "bold" }}>Taxes and Suecharges</p>
+                <p>₹ 843</p>
+              </div>
+              <div
+                style={{
+                  width: "100%",
+                  margin: "auto",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "10px 0px 10px 0px",
+                  borderBottom: "1px solid black",
+                }}>
+                <p style={{ fontWeight: "bold" }}>Other Services</p>
+                <p>₹ 10</p>
+              </div>
+              <div
+                style={{
+                  width: "100%",
+                  margin: "auto",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "10px 0px 10px 0px",
+                }}>
+                <h3>Total Amount</h3>
+                <h3>₹ 6,353</h3>
+              </div>
+            </div>
+          </div>
+          <div style={{ width: "90%", margin: "auto", paddingTop: "10px" }}>
+            <img
+              style={{ width: "100%", margin: "auto" }}
+              src="https://promos.makemytrip.com/notification/xhdpi//Air-India-116x116-29032023.jpg?im=Resize=(134,134)"
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
-const H2=styled.h2`
-h2{
-    font-size:1.5em;
-    font-weight: bold;
-  }
-`
