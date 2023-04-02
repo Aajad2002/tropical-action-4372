@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import { FlagIcon } from "react-flag-kit";
 import logo from "../Essential/logo.png"
+import {Link} from '@chakra-ui/react';
 function Header() {
     // const logo = "https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png";
     const mybiz = "//imgak.mmtcdn.com/mybiz/assets/images/landing/myBizLogo_light.png";
@@ -41,6 +42,16 @@ function Header() {
                             <p>Login or Create Account</p>
                         </div>
                     </div>
+                    <Link href="/adminHotel">
+                    <div className='header_sub' style={{backgroundColor:"#1E88E5"}}>
+                        <div>
+                            <img src={travel} alt="My bix" width="25" />
+                        </div>
+                        <div>
+                            <p>Admin</p>
+                        </div>
+                    </div>
+                    </Link>
                     <div className='header_sub'>
                         <div>
                         {flag}
