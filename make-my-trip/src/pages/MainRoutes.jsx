@@ -18,7 +18,7 @@ export const MainRoutes=()=>{
         <Routes>
     <Route path="/" element={""} />
     <Route path="/flight" element={<Flight/>} />
-    <Route path="/flightbook" element={<SingleProduct />}/>
+    <Route path="/flightbook/:id" element={<SingleProduct />}/>
     <Route path="/ticket" element={<FlightTicketData/>} /> 
     <Route path="/review_ticket" element={<AfterBookingPage/>} /> 
     <Route path="/payment" element={"Please import payment page"} />

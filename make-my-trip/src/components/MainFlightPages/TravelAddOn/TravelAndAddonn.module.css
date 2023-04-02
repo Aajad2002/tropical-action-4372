@@ -22,7 +22,8 @@
 }
 .totalHeader {
   background: #0a223d;
-  padding: 0;
+  padding-left: 6%;
+  padding-right: 10%;
   position: relative;
   z-index: 10;
   width: 100%;
