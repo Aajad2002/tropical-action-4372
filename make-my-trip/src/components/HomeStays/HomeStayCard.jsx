@@ -1,7 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const HomeStayCard = ({image,rating,review,name,location,descLocation,description,subDescription,desc, cancelPrice,price,deal}) => {
+const HomeStayCard = ({id,image,rating,review,name,location,descLocation,description,subDescription,desc, cancelPrice,price,deal}) => {
   return (
+    <Link to={`/homestays/${id}`}>
     <div style={{margin:"30px 0px 30px 0px" , boxShadow:"rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset"}}>
         <div>
           <div
@@ -101,6 +103,7 @@ const HomeStayCard = ({image,rating,review,name,location,descLocation,descriptio
           </div>
         </div>
       </div>
+      </Link>
   )
 }
 

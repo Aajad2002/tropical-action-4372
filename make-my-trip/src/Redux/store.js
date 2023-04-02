@@ -5,8 +5,9 @@ import thunk from "redux-thunk";
 // import {reducer as HotelReducer} from hotel wala reducer loaction
 // import {reducer as HomeStaysReducer} from homestays file reducer
 import { homeStaysReducer } from "./HomeStaysReducer/reducer";
+import { HotelReducer } from "./HotelReducer/reducer";
 const allReducer=combineReducers({
-    homeStaysReducer
+    homeStaysReducer,HotelReducer
 })
 
 export const store=legacy_createStore(allReducer,applyMiddleware(thunk))

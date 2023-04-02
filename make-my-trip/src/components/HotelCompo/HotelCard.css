@@ -1,6 +1,6 @@
 .card{
     width :100%;
-height: 247px;
+height: 267px;
 margin-top: 19px;
 border-radius: 3px;
 /* padding: 20px; */
@@ -15,7 +15,7 @@ justify-content: space-evenly;
     padding-left: 10px;
 }
 .name{
-width: 48%;
+width: 50%;
     /* border: 1px solid red; */
     padding-top: 20px;
 
@@ -24,7 +24,7 @@ width: 48%;
     color:#0084FF
 }
   .card  img{
-        width: 239px;
+        width: 279px;
         height: 239px;
         display: block;
         padding: 20px 10px 10px 10px;
@@ -34,7 +34,7 @@ width: 48%;
         text-align: right;
         /* padding-top:12% ; */
         height: 100%;
-        width: 25.4%;
+        width: 29.4%;
         padding-right: 1%;
         background-color: #f5f5f5;
         /* border: 1px solid green; */
@@ -43,6 +43,9 @@ width: 48%;
         line-height: 17px;
         /* background-color: #333; */
         /* color: #fff; */
+    }
+    .price h2{
+        text-align: right;
     }
 .price>    button{
         color: #fff;
@@ -63,3 +66,8 @@ width: 48%;
        ;
        margin: auto;
     }
+    .name h2{
+        margin-left: -2px;
+        /* border: 1px solid slateblue; */
+    }
+ 

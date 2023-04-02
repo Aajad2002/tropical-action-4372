@@ -18,17 +18,20 @@ const Hotel = () => {
   )
 }
 
+
 const DIV=styled.div`
-    width: 90%;
+    width: 85%;
     margin: auto;
     display: flex;
     justify-content: center;
     .side{
-        width: 15%;
-        border: 1px solid black;
+        width: 25%;
+        /* text-align: right; */
+        border-right: 2px solid black;
     }
     .data1{
         width: 85%;
+        /* border: 1px solid green; */
        
     }
 `

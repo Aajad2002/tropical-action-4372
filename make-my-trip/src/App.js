@@ -8,20 +8,27 @@ import NavbarHotel from './components/Navbar/NavbarHotel';
 import ConstNav from './components/Navbar/ConstNav';
 import Home from './pages/Home';
 import HomeStay from './components/HomeStays/HomeStay';
+import AdminHotel from './Admin/AdminHotel';
+import AdminHomeStay from './Admin/AdminHomeStay';
+import AdminNav from './Admin/AdminNav';
 function App() {
   const {pathname} =useLocation()
   // console.log(pathname)
   return (
     <div className="App">
-       {(pathname=="/")?<Header />:null}
+       {/* {(pathname=="/")?<Header />:null}
        {pathname=="/hotels_home"?<Header/>:"" }
       {(pathname=="/")?<Navbar/>:""}
       {pathname=="/hotels_home"?<NavbarHotel/>:"" }
       {pathname=="/flight"?<ConstNav/>:"" }
       <MainRoutes />
       {(pathname=="/")?<Home/>:""}
-      {pathname=="/hotels_home"?<Home/>:"" }
-      <HomeStay/>
+      {pathname=="/hotels_home"?<Home/>:"" } */}
+      {/* <HomeStay/>     */}
+      {/* <AdminHotel/> */}
+      {/* <AdminHomeStay/>
+       */}
+      <AdminNav/>
     </div>
   );
 }

@@ -3,10 +3,16 @@ import axios from 'axios';
 import HotelCard from './HotelCard';
 import styled from 'styled-components';
 import { useLocation, useSearchParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHotelData } from '../../Redux/HotelReducer/action';
+import ScrollButton from './AutoScrollTop';
 const HotelsData = () => {
    const [data,setData]=useState([]);
    const [searchParams]=useSearchParams()
 console.log(searchParams)
+const dispatch=useDispatch();
+const {hotels}=useSelector((store)=>store.HotelReducer)
+console.log(hotels)
 const location=useLocation()
 useEffect(()=>{
   let obj={
@@ -17,13 +23,15 @@ useEffect(()=>{
         //  q:searchParams.get("search")
     }
   }
-  axios.get(`https://makethejourneyhard.cyclic.app/hotels`,obj).then((res)=>{
-     setData(res.data)
-  })
+  dispatch(getHotelData(obj))
+  // axios.get(`https://makethejourneyhard.cyclic.app/hotels`,obj).then((res)=>{
+  //    setData(res.data)
+  // })
 },[location.search])
   return (
     <DIV>
-      {data?.map((el,i)=>{
+      <ScrollButton/>
+      {hotels?.map((el,i)=>{
         return <HotelCard key={i} {...el}/>
       })}
     </DIV>
@@ -31,8 +39,8 @@ useEffect(()=>{
 }
 const DIV=styled.div`
 padding: 10px;
-  height: 100vh;
-  overflow-x: auto;
+  /* height: 100vh;
+  overflow-x: auto; */
   ::-webkit-scrollbar {
   width: 10px;
 }
