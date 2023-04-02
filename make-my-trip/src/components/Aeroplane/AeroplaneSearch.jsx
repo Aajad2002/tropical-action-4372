@@ -2,10 +2,43 @@ import React, { useState } from 'react';
 import "./AeroplaneSearch.css"
 import { AiOutlineUserAdd } from "react-icons/ai"
 import { AiOutlineUserDelete } from "react-icons/ai"
-import { DataCalender } from './DateCalender';
-import { Link } from '@chakra-ui/react'
+import DataCalender from './DateCalender';
+import { Center, Link } from '@chakra-ui/react'
+import { useSearchParams } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { getDate } from '../../Redux/FlightReducer/action';
 const AeroplaneSearch = () => {
+    const [searchParam, setSearchParam] = useSearchParams()
+    const [firstVal,setFirstVal]=useState("")
+    const [lastVal,setLastVal]=useState("")
+    const [search,setSearch]=useState("")
     const [traveller, setTraveller] = useState(1)
+    const dispatch=useDispatch()
+    const handleFirstVal=(e)=>{
+        setFirstVal(e.target.value)
+    }
+    const handleLastVal=(e)=>{
+        setLastVal(e.target.value)
+    }
+    console.log(firstVal)
+    console.log(lastVal)
+    if(firstVal==="Hyderabad" && lastVal==="Bangalore"){
+        setSearch("hyderabad_bangalore")
+    }else if(firstVal==="Hyderabad" && lastVal==="Delhi"){
+        setSearch("hyderabad_delhi")
+    }else if(firstVal==="Hyderabad" && lastVal==="Chennai"){
+        setSearch("hyderabad_chenni")
+    }else if(firstVal==="Hyderabad" && lastVal==="Mumbai"){
+        setSearch("hyderabad_mumbai")
+    }
+    console.log(search,"search")
+    const handleSrc=()=>{
+    
+        // let params = {
+        //   }
+        //   search && (params.search=search);
+        //   setSearchParam(params)
+    }
     // console.log((DataCalender().props.selected))
     return (
         <div className='outer_div'>
@@ -34,7 +67,7 @@ const AeroplaneSearch = () => {
                     <select className='first_bold'
                         type="text"
                         name="from"
-                        placeholder=""
+                       onChange={handleFirstVal}
                     >
                         <option>select</option>
                         <option value='Hyderabad'>Hyderabad</option>
@@ -44,15 +77,15 @@ const AeroplaneSearch = () => {
                         <option value='Chennai'>Chennai</option>
                     </select>
                 </div>
-                <div>
+                {/* <div>
                     <span className='location_opt_float'>&#8651;</span>
-                </div>
+                </div> */}
                 <div className='location_opt'>
                     <p>To</p>
                     <select className='first_bold'
                         type="text"
                         name="from"
-                        placeholder=""
+                        onChange={handleLastVal}
                     >
                         <option>select</option>
                         <option value='Hyderabad'>Hyderabad</option>
@@ -64,7 +97,7 @@ const AeroplaneSearch = () => {
                 </div>
                 <div className='location_opt'>
                     <p>Departure </p>
-                    <div className='second_bold' style={{ paddingTop: "25px" }}><DataCalender /></div>
+                    <div className='second_bold' style={{ paddingTop: "25px",zIndex:"999" }}><DataCalender /></div>
                 </div>
                 <div className='location_opt'>
                     <p>Return </p>
@@ -82,7 +115,7 @@ const AeroplaneSearch = () => {
             </div>
             <div className='last_opts'>
                 <div className='first_div_last'>
-                    <span>Select A Fare Type:</span>
+                    <span style={{paddingTop:"4px"}}>Select A Fare Type:</span>
                     <span className='back_shadow'>
                         <input type="radio" />
                         <label>Regular Fares</label>
@@ -99,20 +132,20 @@ const AeroplaneSearch = () => {
                         <input type="radio" />
                         <label>Regular</label>
                     </span>
-                    <span className='back_shadow'>
+                    {/* <span className='back_shadow'>
                         <input type="radio" />
-                        <label>Regular Fares</label></span>
+                        <label>Regular Fares</label></span> */}
                 </div>
-                <div className='second_div_last'>
+                {/* <div className='second_div_last'>
                     <span>Trending Search:</span>
                     <span className='back_shadow' style={{textAlign:"center"}}>Chenni
                         <span>&#8594;</span>Kuala Lumpur</span>
                     <span className='back_shadow'>Chenni
                         <span>&#8594;</span>Hyderabad</span>
-                </div>
+                </div> */}
             </div>
             <Link href="/flight">
-            <button className='src_btn'>SEARCH</button>
+            <button className='src_btn' onClick={handleSrc}>SEARCH</button>
                 </Link>
             
         </div>

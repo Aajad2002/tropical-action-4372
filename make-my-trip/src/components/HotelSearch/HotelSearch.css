@@ -102,10 +102,10 @@
     grid-template-columns: repeat(3,1fr);
     font-size: 0.8rem;
   }
-  .back_shadow_hotel{
+  /* .back_shadow_hotel{
     background-color:#BDBDBD;
     border-radius: 3px;
-  }
+  } */
   @media only screen and (max-width: 600px) {
     .last_opts_hotel{
       /* style={{display:"flex", justifyContent:"space-between",padding:"10px"}} */
@@ -116,17 +116,18 @@
     }
   }
   .src_btn_hotel{
-      background-color: #1565C0; /* Green */
-      border: none;
-      color: white;
-      padding: 0.4rem 2rem;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 1.2rem;
-      border-radius: 14px;
-      position: relative;
-      left: 45%;
-      margin-top:1vh;
+    background-color: #1565C0; /* Green */
+    border: none;
+    color: white;
+    padding: 0.4rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    border-radius: 14px;
+    /* position: relative; */
+    left: 45%;
+    margin-left: 10px;
+    margin-top:1vh;
   }
   

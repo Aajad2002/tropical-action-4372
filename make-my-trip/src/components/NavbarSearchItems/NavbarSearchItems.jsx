@@ -47,7 +47,7 @@ const links = [
         id: 3,
         to: '/home_stay_home',
         imgLink: <MdHomeWork style={{ margin: "auto", fontSize: 30, padding: 3 }} />,
-        title: 'Villas&Apts'
+        title: 'Homestays'
     },
     {
         id: 4,
@@ -55,7 +55,7 @@ const links = [
         imgLink: <MdHolidayVillage
             style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
-        title: 'Holiday Packages'
+        title: 'Holiday'
     },
     {
         id: 5,
@@ -101,7 +101,7 @@ const links = [
         imgLink: <GiCommercialAirplane
             style={{ margin: "auto", fontSize: 30, padding: 3 }}
         />,
-        title: 'Charter flights'
+        title: 'Charter'
     },
 ]
 

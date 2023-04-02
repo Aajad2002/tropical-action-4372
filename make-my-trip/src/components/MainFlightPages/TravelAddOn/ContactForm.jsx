@@ -1,6 +1,14 @@
+import { useState } from "react";
 import styles from "./ContactForm.module.css";
+import { BookingDetails } from "./BookingDetails";
 export const Form = () => {
+  const [userData,setUserData]=useState({})
+  const handleChange=(e)=>{
+    const {name,value}=e.target
+    setUserData(pre=>{return{...pre,[name]:value}})
+  }
   return (
+    <>
     <div className={styles.FormDiv}>
       <div
         style={{
@@ -42,18 +50,18 @@ export const Form = () => {
           </p>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <form style={{ display: "inline-block" }}>
-              <input placeholder="First & Middle Name" />
+              <input placeholder="First & Middle Name" name="firstName" onChange={handleChange}/>
 
-              <input placeholder="Last Name" />
+              <input placeholder="Last Name" name="lastName" onChange={handleChange}/>
             </form>
-            <div className={styles.radioLabel}>
-              <label tabIndex="0">
-                <input type="radio" value="MALE" />
-                <button className={styles.labelText}>MALE</button>
+            <div  onChange={handleChange}>
+                <input type="radio" name="gender" value="MALE" />
+              <label>
+                MALE
               </label>
-              <label tabIndex="1">
-                <input type="radio" value="FEMALE" />
-                <button className={styles.labelText}>FEMALE</button>
+                <input type="radio" name="gender" value="FEMALE" />
+              <label>
+                FEMALE
               </label>
             </div>
           </div>
@@ -63,5 +71,7 @@ export const Form = () => {
         </button>
       </div>
     </div>
+    <BookingDetails data={userData}/>
+    </>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './HotelSearch.css';
 import { AiOutlineUserAdd } from "react-icons/ai"
 import { AiOutlineUserDelete } from "react-icons/ai"
-import { DataCalender } from '../Aeroplane/DateCalender';
+import  DataCalender  from '../Aeroplane/DateCalender';
 import {Link} from '@chakra-ui/react';
 const HotelSearch = () => {
     const [customer, seCustomer] = useState(1)
@@ -67,7 +67,7 @@ const HotelSearch = () => {
             </div>
             <div className='last_opts_hotel'>
                 <div className='first_div_last_hotel'>
-                    <span>Select A Fare Type:</span>
+                    <span style={{paddingTop:"4px"}}>Select A Fare Type:</span>
                     <span className='back_shadow_hotel'>
                         <input type="radio" />
                         <label>Regular Fares</label>

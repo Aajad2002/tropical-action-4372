@@ -85,7 +85,7 @@ export const ContactForm = () => {
                     </span>
                     <span>Fee &amp; Surcharges</span>
                   </p>
-                  <span class="font16">₹ 783</span>
+                  <span className="font16">₹ 783</span>
                 </div>
               </div>
               <div className={styles.FareSummary}>
@@ -101,7 +101,7 @@ export const ContactForm = () => {
                     </span>
                     <span>Other Services</span>
                   </p>
-                  <span class="font16">₹ 10</span>
+                  <span className="font16">₹ 10</span>
                 </div>
               </div>
               <div style={{display:"flex", justifyContent:"space-between", height:"35px"}}>

@@ -1,8 +1,25 @@
 import booking from "./Image/booking.png";
 import booking2 from "./Image/booking2.png";
 import { SingleProHeader } from "./SingleProHeader";
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import axios from "axios";
+import { useParams } from 'react-router-dom';
+import { Link } from '@chakra-ui/react'
 // import { BookingFlightDetails } from "./BookingFlightDetails"
 export function SingleProduct() {
+  const [data, setData] = useState({})
+    const dispatch = useDispatch()
+    const { id } = useParams()
+    const { airports } = useSelector(store => store.FlightReducer)
+    console.log(airports)
+    useEffect(() => {
+    //    const data= dispatch(getData())
+        // const data = airports.find(el => el.id == +id)
+        // setData(data)
+        axios.get(`https://makethejourneyhard.cyclic.app/airports/${id}`).then(res=>setData(res.data))
+    }, [])
   return (
     <>
       <SingleProHeader />
@@ -303,6 +320,17 @@ export function SingleProduct() {
               style={{ width: "100%", margin: "auto" }}
               src="https://promos.makemytrip.com/notification/xhdpi//Air-India-116x116-29032023.jpg?im=Resize=(134,134)"
             />
+            <Link href="/ticket"><button style={{
+               height:" 40px",
+               width: "150px",
+               backgroundColor:"#26a0ff",
+               borderRadius: "20px",
+               color: "white",
+               lineHeight: "35px",
+              textAlign:"center",
+              marginTop:"2rem",
+              marginLeft:"3.5rem",
+            }}>Continue</button></Link>
           </div>
         </div>
       </div>
