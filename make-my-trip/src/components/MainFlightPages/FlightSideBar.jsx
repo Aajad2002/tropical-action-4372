@@ -1,94 +1,132 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSearchParams } from "react-router-dom";
+import { useState, useEffect } from 'react';
 const FlightSideBar = () => {
+  const [searchParam, setSearchParam] = useSearchParams()
+  const initialCategory = searchParam.getAll("category")
+  const initialOrder=searchParam.get("order")
+  const [category, setCategory] = useState(initialCategory || [])
+  const [order,setOrder]=useState(initialOrder || "")
+  const handleChange = (e) => {
+    let newCategory = [...category]
+    const value = e.target.value
+    if (newCategory.includes(value)) {
+      newCategory = newCategory.filter(el => (el !== value))
+    } else {
+      newCategory.push(value)
+    }
+    setCategory(newCategory)
+  }
+  const handleSort=(e)=>{
+    setOrder(e.target.value)
+  }
+  /////////////////type filtering
+  const typeArr = searchParam.getAll("type")
+  const [types, setTypes] = useState(typeArr || [])
+
+  const handleType = (e) => {
+    let newCategory = [...types]
+    const value = e.target.value
+    if (newCategory.includes(value)) {
+      newCategory = newCategory.filter(el => (el !== value))
+    } else {
+      newCategory.push(value)
+    }
+    setTypes(newCategory)
+
+  }
+  useEffect(() => {
+    let params = {
+      category: category,
+      types: types,
+    }
+    order && (params.order=order);
+    setSearchParam(params)
+  }, [category, types,order])
   return (
-    <div style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",backgroundColor:"white",borderRadius:"5px",padding:"1rem",width:"20%"}}>
-    <DIV>
-    <h3>Popular Filters</h3>
-    <div>
-    <input type="checkbox" value="non_stop"/>
-    <label>Non Stop</label>
-    </div>
-    <div>
-    <input type="checkbox" value="morning"/>
-    <label>Morning Departures</label>
-    </div>
-    <div>
-    <input type="checkbox" value="indigo" />
-    <label>IndiGo</label>
-    </div>
-    <div>
-    <input type="checkbox" value="vistara" />
-    <label>Vistara</label>
-    </div>
-    <hr />
-    </DIV>
-    <DIV class="slidecontainer">
-      <h3>One Way Price</h3>
-  <input type="range" min="1" max="100" class="slider" id="priceRange"/>
-  <hr />
-    </DIV>
-    <DIV>
-    <h3>Stop From New Delhi</h3>
-    <div>
-    <input type="checkbox" value="non_stop"/>
-    <label>Non Stop</label>
-    </div>
-    <div>
-    <input type="checkbox" value="1stop"/>
-    <label>1 Stop</label>
-    </div>
-    <div>
-    <input type="checkbox" value="1+stop" />
-    <label>1+Stop</label>
-    </div>
-    <hr />
-    </DIV>
-    <DIV>
-    <h3>Airlines</h3>
-    <div>
-    <input type="checkbox" value="airindia"/>
-    <label>Air India</label>
-    </div>
-    <div>
-    <input type="checkbox" value="airasia"/>
-    <label>Air Asia</label>
-    </div>
-    <div>
-    <input type="checkbox" value="akasaair" />
-    <label>Akasa Air</label>
-    </div>
-    <div>
-    <input type="checkbox" value="gofirst"/>
-    <label>Go First</label>
-    </div>
-    <div>
-    <input type="checkbox" value="indigo"/>
-    <label>IndiGo</label>
-    </div>
-    <div>
-    <input type="checkbox" value="spicejet" />
-    <label>SpiceJet</label>
-    </div>
-    </DIV>
-    {/* <DIV onChange={handleSort}>
-      <h3>Sorting..</h3>
+    <div style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor: "white", borderRadius: "5px", padding: "1rem", width: "20%",height:"700px" }}>
+      <DIV>
+        <h3>Popular Filters</h3>
+        <div>
+          <input type="checkbox" value="No stop" checked={category.includes("No stop")} onChange={handleChange} />
+          <label>Non Stop</label>
+        </div>
+        <div>
+          <input type="checkbox" value="Morning Departures" checked={category.includes("Morning Departures")} onChange={handleChange} />
+          <label>Morning Departures</label>
+        </div>
+        <div>
+          <input type="checkbox" value="IndiGo" checked={category.includes("IndiGo")} onChange={handleChange} />
+          <label>IndiGo</label>
+        </div>
+        <div>
+          <input type="checkbox" value="vistara" checked={category.includes("vistara")} onChange={handleChange} />
+          <label>Vistara</label>
+        </div>
+        <hr />
+      </DIV>
+      <DIV onChange={handleSort}>
+      <h3>Price</h3>
       <div>
         <input type="radio" value={"asc"} name="sort" defaultChecked={order==="asc"}/>
-        <label>Ascending</label>
+        <label>Low to High</label>
       </div>
       <div>
         <input type="radio" value={"desc"} name="sort" defaultChecked={order==="desc"}/>
-        <label>Descending</label>
+        <label>High to Low</label>
       </div>
-    </DIV> */}
+    </DIV>
+      <DIV>
+        <h3>Stop From New Delhi</h3>
+        <div>
+          <input type="checkbox" value="No stop" checked={types.includes("No stop")} onChange={handleType} />
+          <label>Non Stop</label>
+        </div>
+        <div>
+          <input type="checkbox" value="1 stop" checked={types.includes("1 stop")} onChange={handleType} />
+          <label>1 Stop</label>
+        </div>
+        <div>
+          <input type="checkbox" value="1+ stop" checked={types.includes("1+ stop")} onChange={handleType} />
+          <label>1+ Stop</label>
+        </div>
+        <hr />
+      </DIV>
+      <DIV>
+        <h3>Airlines</h3>
+        <div>
+          <input type="checkbox" value="Air India" checked={category.includes("Air India")} onChange={handleChange} />
+          <label>Air India</label>
+        </div>
+        <div>
+          <input type="checkbox" value="Air Asia" checked={category.includes("Air Asia")} onChange={handleChange} />
+          <label>Air Asia</label>
+        </div>
+        <div>
+          <input type="checkbox" value="Akasa Air" checked={category.includes("Akasa Air")} onChange={handleChange} />
+          <label>Akasa Air</label>
+        </div>
+        <div>
+          <input type="checkbox" value="Go First" checked={category.includes("Go First")} onChange={handleChange} />
+          <label>Go First</label>
+        </div>
+        <div>
+          <input type="checkbox" value="IndiGo" checked={category.includes("IndiGo")} onChange={handleChange} />
+          <label>IndiGo</label>
+        </div>
+        <div>
+          <input type="checkbox" value="Spice Jet" checked={category.includes("Spice Jet")} onChange={handleChange} />
+          <label>SpiceJet</label>
+        </div>
+      </DIV>
     </div>
   );
 }
-const DIV=styled.div`
+const DIV = styled.div`
+
 display:flex;
 flex-direction:column;
-
 h3{
   font-size:1.5em;
   font-weight: bold;

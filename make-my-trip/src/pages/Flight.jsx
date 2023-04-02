@@ -12,9 +12,6 @@ const Flight = () => {
 <div style={{display:"flex", padding:"2rem",gap:"2rem",backgroundColor:"#CFD8DC",}}>
   <FlightSideBar/>
   <AvailFlights/>
-  <Link href='/flightbook'>
-  <button>next</button>
-  </Link>
 </div>
     </div>
   </>

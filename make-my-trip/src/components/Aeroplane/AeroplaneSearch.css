@@ -22,7 +22,7 @@ width: 28%;
 .location_select{
   margin: 2%;
   display: grid;
-  grid-template-columns:25% 0% 25% 15% 15% 20% ;
+  grid-template-columns:25% 25% 15% 15% 20% ;
   border: 1px solid gray;
   border-radius: 7px;
   height: 20vh;
@@ -130,7 +130,8 @@ input[type=radio]{
     display: inline-block;
     font-size: 1.2rem;
     border-radius: 14px;
-    position: relative;
+    /* position: relative; */
     left: 45%;
+    margin-left: 10px;
     margin-top:1vh;
 }

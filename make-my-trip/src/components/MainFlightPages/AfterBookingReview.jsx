@@ -1,4 +1,4 @@
-import { BookingDetails } from "./TravelAddOn/BookingDetails";
+
 import { ContactForm } from "./TravelAddOn/Contact";
 import { Form } from "./TravelAddOn/ContactForm";
 import { Popup } from "./TravelAddOn/PopupReview";
@@ -11,7 +11,6 @@ export const AfterBookingPage = () => {
       <TravelAndAddOnn />
       <ContactForm />
       <Form/>
-      <BookingDetails/>
       <Popup/>
      {" "}
     </div>

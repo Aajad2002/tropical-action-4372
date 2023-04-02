@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './HotelSearch.css';
 import { AiOutlineUserAdd } from "react-icons/ai"
 import { AiOutlineUserDelete } from "react-icons/ai"
-import { DataCalender } from '../Aeroplane/DateCalender';
+import  DataCalender  from '../Aeroplane/DateCalender';
 import {Link} from '@chakra-ui/react';
 const HotelSearch = () => {
     const [customer, seCustomer] = useState(1)

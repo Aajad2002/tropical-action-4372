@@ -12,9 +12,9 @@ import HomeStay from './components/HomeStays/HomeStay';
 import AdminHotel from './Admin/AdminHotel';
 import AdminHomeStay from './Admin/AdminHomeStay';
 import AdminNav from './Admin/AdminNav';
+import { SingleProduct } from './components/MainFlightPages/SingleProduct';
 function App() {
   const {pathname} =useLocation()
-  // console.log(pathname)
   return (
     <div className="App">
              {(pathname=="/")?<Header />:null}
@@ -30,19 +30,7 @@ function App() {
       {(pathname=="/")?<Home/>:""}
       {pathname=="/hotels_home"?<Home/>:"" }
       {pathname=="/home_stay_home"?<Home/>:"" }
-       {/* {(pathname=="/")?<Header />:null}
-       {pathname=="/hotels_home"?<Header/>:"" }
-      {(pathname=="/")?<Navbar/>:""}
-      {pathname=="/hotels_home"?<NavbarHotel/>:"" }
-      {pathname=="/flight"?<ConstNav/>:"" }
-      <MainRoutes />
-      {(pathname=="/")?<Home/>:""}
-      {pathname=="/hotels_home"?<Home/>:"" }
-      <HomeStay/>    
-      <AdminHotel/>
-      <AdminHomeStay/>
-      
-      <AdminNav/> */}
+      {/* <SingleProduct/> */}
     </div>
   );
 }
