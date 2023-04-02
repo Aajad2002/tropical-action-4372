@@ -67,7 +67,7 @@ const HomeStaySearch = () => {
             </div>
             <div className='last_opts_hotel'>
                 <div className='first_div_last_hotel'>
-                    <span>Select A Fare Type:</span>
+                    <span style={{paddingTop:"4px"}}>Select A Fare Type:</span>
                     <span className='back_shadow_hotel'>
                         <input type="radio" />
                         <label>Regular Fares</label>

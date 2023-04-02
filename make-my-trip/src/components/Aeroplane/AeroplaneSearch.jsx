@@ -3,7 +3,7 @@ import "./AeroplaneSearch.css"
 import { AiOutlineUserAdd } from "react-icons/ai"
 import { AiOutlineUserDelete } from "react-icons/ai"
 import DataCalender from './DateCalender';
-import { Link } from '@chakra-ui/react'
+import { Center, Link } from '@chakra-ui/react'
 import { useSearchParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { getDate } from '../../Redux/FlightReducer/action';
@@ -115,7 +115,7 @@ const AeroplaneSearch = () => {
             </div>
             <div className='last_opts'>
                 <div className='first_div_last'>
-                    <span>Select A Fare Type:</span>
+                    <span style={{paddingTop:"4px"}}>Select A Fare Type:</span>
                     <span className='back_shadow'>
                         <input type="radio" />
                         <label>Regular Fares</label>
