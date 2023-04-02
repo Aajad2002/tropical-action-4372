@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import NavbarHotel from './components/Navbar/NavbarHotel';
 import ConstNav from './components/Navbar/ConstNav';
 import Home from './pages/Home';
+import NavbarHomeStay from './components/Navbar/NavbarHomeStay';
 import HomeStay from './components/HomeStays/HomeStay';
 import AdminHotel from './Admin/AdminHotel';
 import AdminHomeStay from './Admin/AdminHomeStay';
@@ -16,6 +17,19 @@ function App() {
   // console.log(pathname)
   return (
     <div className="App">
+             {(pathname=="/")?<Header />:null}
+       {pathname=="/hotels_home"?<Header/>:"" }
+       {pathname=="/home_stay_home"?<Header/>:"" }
+      {(pathname=="/")?<Navbar/>:""}
+      {pathname=="/hotels_home"?<NavbarHotel/>:"" }
+      {pathname=="/home_stay_home"?<NavbarHomeStay/>:"" }
+      {pathname=="/flight"?<ConstNav/>:"" }
+      {pathname=="/hotel"?<ConstNav/>:"" }
+      {pathname=="/home_stay"?<ConstNav/>:"" }
+      <MainRoutes />
+      {(pathname=="/")?<Home/>:""}
+      {pathname=="/hotels_home"?<Home/>:"" }
+      {pathname=="/home_stay_home"?<Home/>:"" }
        {/* {(pathname=="/")?<Header />:null}
        {pathname=="/hotels_home"?<Header/>:"" }
       {(pathname=="/")?<Navbar/>:""}
@@ -23,12 +37,12 @@ function App() {
       {pathname=="/flight"?<ConstNav/>:"" }
       <MainRoutes />
       {(pathname=="/")?<Home/>:""}
-      {pathname=="/hotels_home"?<Home/>:"" } */}
-      {/* <HomeStay/>     */}
-      {/* <AdminHotel/> */}
-      {/* <AdminHomeStay/>
-       */}
-      <AdminNav/>
+      {pathname=="/hotels_home"?<Home/>:"" }
+      <HomeStay/>    
+      <AdminHotel/>
+      <AdminHomeStay/>
+      
+      <AdminNav/> */}
     </div>
   );
 }

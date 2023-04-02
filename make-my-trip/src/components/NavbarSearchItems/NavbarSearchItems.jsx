@@ -45,7 +45,7 @@ const links = [
     },
     {
         id: 3,
-        to: '/homestays',
+        to: '/home_stay_home',
         imgLink: <MdHomeWork style={{ margin: "auto", fontSize: 30, padding: 3 }} />,
         title: 'Villas&Apts'
     },
