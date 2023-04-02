@@ -33,7 +33,7 @@ const HomeStayForm = ({ setAdd }) => {
     }
 
     return (
-        <Box display={"flex"} flexDirection={"column"} width={"50%"} border={"1px solid black"} padding={"20px"} boxShadow={"rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.3) 6px 3px 6px"} margin={"auto"}>
+        <Box >
 
           <Text fontSize={"25px"} textAlign={"center"} fontWeight={"bold"} padding={"10px"}>HomeStay Database</Text>
             <label>Image</label>
@@ -71,7 +71,7 @@ const HomeStayForm = ({ setAdd }) => {
                 <option value="Villa">Villa</option>
             </Select>
             
-            <Button margin={"10px 0px 10px 10px"} onClick={handleClick} >Add Homestay</Button>
+            <Button style={{background:"linear-gradient(#061526, #144073)",marginTop:"2rem", color:"white"}}  onClick={handleClick} >Add Homestay</Button>
         </Box>
     )
 }

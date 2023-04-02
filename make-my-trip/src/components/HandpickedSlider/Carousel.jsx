@@ -19,7 +19,7 @@ function slideLeft() {
 
   return (
     <VStack>
-      <Heading  style={{display:"flex" ,justifyContent:"space-between" , width:"100%" , fontSize:"30px" }}>{heading}
+      <Heading  style={{display:"flex" ,justifyContent:"space-between" , width:"100%" ,margin:"auto", fontSize:"30px" }}>{heading}
       <Flex w="10%"  gap={"2px"} alignItems={"right"} justifyContent={"flex-end"} >
         <Button onClick={()=>{
             slideLeft()

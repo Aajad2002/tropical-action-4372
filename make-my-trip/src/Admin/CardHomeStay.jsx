@@ -41,9 +41,10 @@ const CardHomeStay = ({ el,setEdit }) => {
 setEdit((prev)=>!prev)
 }
 const handleClick = () => {
+    onClose()
     patchHomstayData(id, homeStay)
     Swal.fire({
-        title: '',
+        title: 'Edit Successful !',
         showConfirmButton: false,
         icon: 'success',
         showClass: {
@@ -58,16 +59,29 @@ const handleClick = () => {
     setEdit((prev)=>!prev)
 }
     return (
-        <Box w={"450px"} >
-            <Image w={"95%"} h={200} src={image} alt={""} />
-            <Text>Name:-{name}</Text>
-            <Text>Address:-{desc}</Text>
-            <Text>Price:-{price}</Text>
+        <Box style={{
+            borderRadius: "15px",
+            boxShadow:
+              "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
+            padding: "20px",
+          }}
+          w={"450px"}>
+            <Image w={"100%"} h={200} src={image} alt={""} />
+            <Text style={{ fontSize: "20px", fontWeight: "bold", paddingTop: "1rem" }}>{name}</Text>
+            <Text style={{ fontSize: "16px", fontWeight: "bold" }}>Address:-{desc}</Text>
+            <Text style={{ fontSize: "16px", fontWeight: "bold" }}>Price:-{price}</Text>
             {/* <Text>Star:-{star}</Text> */}
             {/* <Text>City:-{city}</Text> */}
             {/* <Link to={`/adminHotel/${id}`}>  <Button  colorScheme='green'>Edit</Button></Link> */}
-            <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>Edit
-                <Drawer size={"xl"}
+            <Box  style={{
+         
+         display: "flex",
+         width: "60%",
+         margin: "auto",
+         justifyContent:"space-around"
+       }}>
+            <Button style={{background:"linear-gradient(#061526, #144073)", width:"90px", color:"white"}} ref={btnRef} colorScheme='teal' onClick={onOpen}>Edit
+                <Drawer size={"md"}
                     isOpen={isOpen}
                     placement='right'
                     onClose={onClose}
@@ -76,10 +90,10 @@ const handleClick = () => {
                     <DrawerOverlay />
                     <DrawerContent>
                         <DrawerCloseButton />
-                        <DrawerHeader textAlign={'center'}>Edit Data</DrawerHeader>
+                        <DrawerHeader style={{fontSize:"20px", fontWeight:"bold"}} textAlign={'center'}>Edit Data</DrawerHeader>
 
                         <DrawerBody>
-                            <Box display={"flex"} flexDirection={"column"} width={"50%"} border={"1px solid black"} padding={"20px"} boxShadow={"rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.3) 6px 3px 6px"} margin={"auto"}>
+                            <Box display={"flex"} flexDirection={"column"} width={"90%"} border={"1px solid black"} padding={"20px"} boxShadow={"rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.3) 6px 3px 6px"} margin={"auto"}>
 
                                 <Text fontSize={"25px"} textAlign={"center"} fontWeight={"bold"} padding={"10px"}>HomeStay Database</Text>
                                 <label>Image</label>
@@ -123,12 +137,13 @@ const handleClick = () => {
                             <Button variant='outline' mr={3} onClick={onClose}>
                                 Cancel
                             </Button>
-                            <Button colorScheme='blue' onClick={handleClick}>Save</Button>
+                            <Button style={{background:"linear-gradient(#061526, #144073)", color:"white"}} onClick={handleClick}>Save</Button>
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
             </Button>
             <Button onClick={handleDelete} colorScheme='red'>Delete</Button>
+        </Box>
         </Box>
     )
 }

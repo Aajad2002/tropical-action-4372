@@ -64,7 +64,7 @@ const AdminHotelForm = ({ setAdd }) => {
             <Input value={hotel.star} name='star' type="text" onChange={handleChange}/>
             <label>Hotel Rating</label>
             <Input value={hotel.rating} name='rating' type="number" onChange={handleChange} />
-            <Button onClick={handleClick} >Add Hotel</Button>
+            <Button style={{background:"linear-gradient(#061526, #144073)",marginTop:"2rem", color:"white"}} onClick={handleClick} >Add Hotel</Button>
         </Box>
     )
 }

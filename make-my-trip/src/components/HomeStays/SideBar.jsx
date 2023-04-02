@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useSearchParams } from "react-router-dom";
-
+import "../HomeStays/homeStaySidebar.css"
 export const Sidebar = () => {
   const [searchParems, setSearchParem] = useSearchParams();
   // const dispatch = useDispatch();
@@ -36,118 +36,116 @@ export const Sidebar = () => {
   // const {homeStays} = useSelector((store)=>store.homeStaysReducer)
 
   return (
-    <div style={{ margin: "20px" }}>
-      <h1 style={{ fontWeight: "bold", fontSize: "25px", padding: "10px" }}>
+    <div id="mainSideBar" >
+      <h1 id="heading">
         Select Filters
       </h1>
 
       <div>
-        <h2 style={{ fontWeight: "bold", fontSize: "20px", padding: "10px" }}>
+        <h2 id="heading">
           Suggested For You
         </h2>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
+        <div style={{ padding: "7px" }}>
           <input
+          className="inp"
             type="checkbox"
             value="NorthGoa"
             onChange={handleChange}
             checked={locationForSort.includes("NorthGoa")}
           />
-          <label>North Goa</label>
+          <label className="inpLabel">North Goa</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
+        <div style={{ padding: "7px" }}>
           <input
+          className="inp"
             type="checkbox"
             value="SouthGoa"
             onChange={handleChange}
             checked={locationForSort.includes("SouthGoa")}
           />
-          <label>South Goa</label>
+          <label className="inpLabel">South Goa</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
+        <div style={{ padding: "7px" }}>
           <input
+          className="inp"
             type="checkbox"
             value="Villa"
             onChange={handleChange}
             checked={locationForSort.includes("Villa")}
           />
-          <label>Villa (433)</label>
+          <label className="inpLabel">Villa (433)</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
+        <div style={{ padding: "7px" }}>
           <input
+          className="inp"
             type="checkbox"
             value="BeachProperty"
             onChange={handleChange}
             checked={locationForSort.includes("BeachProperty")}
           />
-          <label>Beach Property (33)</label>
+          <label className="inpLabel">Beach Property (33)</label>
         </div>
       </div>
       <div>
         <h1
-          style={{
-            fontWeight: "bold",
-            fontSize: "20px",
-            padding: "40px 0px 10px 10px",
-          }}>
+          id="heading">
           Sort By Price
         </h1>
         <div onChange={handleSort}>
-          <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
+          <div style={{ padding: "7px" }}>
             <input
               type="radio"
               name="order"
               value="asc"
+              className="inp"
               defaultChecked={order === "asc"}
             />
-            <label>Ascending</label>
+            <label className="inpLabel">Low to High</label>
           </div>
-          <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
+          <div style={{ padding: "7px" }}>
             <input
               type="radio"
               name="order"
               value="desc"
+              className="inp"
               defaultChecked={order === "desc"}
             />
-            <label>Descending</label>
+            <label className="inpLabel">High to Low</label>
           </div>
         </div>
       </div>
       <div>
-        <h1
-          style={{
-            fontWeight: "bold",
-            fontSize: "20px",
-            padding: "40px 0px 10px 10px",
-          }}>
+        <h1 id="heading"
+         >
           Price per night
         </h1>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
-          <input type="checkbox" value="" />
-          <label>₹ 0 - ₹ 2000</label>
+        <div style={{ padding: "7px" }}>
+          <input className="inp" type="checkbox" value="" />
+          <label className="inpLabel">₹ 0 - ₹ 2000</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
-          <input type="checkbox" value="" />
-          <label>₹ 2000 - ₹ 5000</label>
+        <div style={{ padding: "7px" }}>
+          <input className="inp" type="checkbox" value="" />
+          <label className="inpLabel">₹ 2000 - ₹ 5000</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
-          <input type="checkbox" value="" />
-          <label>₹ 5000 - ₹ 7500</label>
+        <div style={{ padding: "7px" }}>
+          <input className="inp" type="checkbox" value="" />
+          <label className="inpLabel">₹ 5000 - ₹ 7500</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
-          <input type="checkbox" value="" />
-          <label>₹ 7500 - ₹ 10000</label>
+        <div style={{ padding: "7px" }}>
+          <input className="inp" type="checkbox" value="" />
+          <label className="inpLabel">₹ 7500 - ₹ 10000</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
-          <input type="checkbox" value="" />
-          <label>₹ 7500 - ₹ 10000</label>
+        <div style={{ padding: "7px" }}>
+          <input className="inp" type="checkbox" value="" />
+          <label className="inpLabel">₹ 7500 - ₹ 10000</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
-          <input type="checkbox" value="" />
-          <label>₹ 15000 - ₹ 30000</label>
+        <div style={{ padding: "7px" }}>
+          <input className="inp" type="checkbox" value="" />
+          <label className="inpLabel">₹ 15000 - ₹ 30000</label>
         </div>
-        <div style={{ padding: "5px 0px 5px 10px", color: "#707070" }}>
-          <input type="checkbox" value="" />
-          <label> ₹ 30000+</label>
+        <div style={{ padding: "7px" }}>
+          <input className="inp" type="checkbox" value="" />
+          <label className="inpLabel"> ₹ 30000+</label>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import HomeStayForm from './AdminHomeStaysForm';
 import { SimpleGrid,Button,Box } from '@chakra-ui/react';
 import { getHomeStayData } from '../Redux/HomeStaysReducer/action';
 import CardHomeStay from './CardHomeStay';
+import "../Admin/adminHomeStay.css"
 const AdminHomeStay = () => {
     const [add,setAdd]=useState(false);
     const [edit,setEdit]=useState(false)
@@ -17,17 +18,29 @@ useEffect(()=>{
    dispatch(getHomeStayData())
 },[edit,add])
   return (
-    <Box style={{position:'relative'}}>
-       {add?<HomeStayForm setAdd={setAdd}/>:<Button onClick={()=>setAdd(true)}> + Add HomeStay</Button>} 
-      {/* {edit && <EditData />} */}
-        <SimpleGrid w={"95%"} m={"auto"} columns={[1,2,3]} spacing={10}>
-            {
-                homeStays?.map((el,i)=>{
+    <div className='main'>
+      <div className='btnDiv'>
+      {add?<HomeStayForm setAdd={setAdd}/>:<button style={{ background:"linear-gradient(#061526, #144073)"  }} onClick={()=>setAdd(true)}>  Add HomeStay</button>} 
+      </div>
+      <div className='homeStayData'>
+      {
+            homeStays?.map((el,i)=>{
                     return <CardHomeStay setEdit={setEdit} key={i} el={el} />
                 })
             }
-        </SimpleGrid>
-    </Box>
+      </div>
+    </div>
+    // <Box style={{position:'relative'}}>
+    //    {add?<HomeStayForm setAdd={setAdd}/>:<Button onClick={()=>setAdd(true)}> + Add HomeStay</Button>} 
+    //   {/* {edit && <EditData />} */}
+    //     <SimpleGrid w={"95%"} m={"auto"} columns={[1,2,3]} spacing={10}>
+    //         {
+    //             homeStays?.map((el,i)=>{
+    //                 return <CardHomeStay setEdit={setEdit} key={i} el={el} />
+    //             })
+    //         }
+    //     </SimpleGrid>
+    // </Box>
   )
 }
 

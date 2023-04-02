@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Button, SimpleGrid } from '@chakra-ui/react';
 import AdminHotelForm from './AdminHotelForm';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteHotelData, getHotelData } from '../Redux/HotelReducer/action';
+import "../Admin/adminHotel.css"
 import CardHotel from './CardHotel';
-// import EditData from './EditHotelData';
+
 const AdminHotel = () => {
     const [add,setAdd]=useState(false);
     const [edit,setEdit]=useState(false)
@@ -17,17 +17,23 @@ useEffect(()=>{
    dispatch(getHotelData())
 },[edit,add])
   return (
-    <Box style={{position:'relative'}}>
-       {add?<AdminHotelForm setAdd={setAdd}/>:<Button onClick={()=>setAdd(true)}> + Add Hotel</Button>} 
+    <div className='main'>
+      <div className='btnDiv'>
+      {add?<AdminHotelForm setAdd={setAdd}/>:<button style={{ background:"linear-gradient(#061526, #144073)"  }} onClick={()=>setAdd(true)}> Add Hotel</button>} 
+      </div>
+      
       {/* {edit && <EditData />} */}
-        <SimpleGrid w={"95%"} m={"auto"} columns={[1,2,3]} spacing={10}>
-            {
+        {/* <SimpleGrid w={"95%"} m={"auto"} columns={[1,2,3]} spacing={10}> */}
+        <div className='hotelData'>
+        {
                 hotels?.reverse().map((el,i)=>{
                     return <CardHotel setEdit={setEdit} key={i} el={el} />
                 })
             }
-        </SimpleGrid>
-    </Box>
+        </div>
+            
+        {/* </SimpleGrid> */}
+    </div>
   )
 }
 

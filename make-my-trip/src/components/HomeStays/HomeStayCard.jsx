@@ -11,7 +11,7 @@ const HomeStayCard = ({id,image,rating,review,name,location,descLocation,descrip
               display: "flex",
               padding: "10px",
               justifyContent: "space-between",
-              height: "270px",
+              height: "300px",
               
             }}>
             <div>
@@ -81,7 +81,7 @@ const HomeStayCard = ({id,image,rating,review,name,location,descLocation,descrip
                 textAlign: "right",
                 paddingRight:"5px"
               }}>
-              <p style={{ marginTop: "100px", color: "#9B9B9B" }}>₹ {cancelPrice}</p>
+              <p style={{ marginTop: "100px", color: "#9B9B9B", textDecoration: "line-through" }}>₹ {cancelPrice}</p>
               <p style={{ fontSize: "22px", fontWeight: "bold" }}>₹ {price}</p>
               <div>
                 <p>+ ₹ 120 taxes & fees</p>
