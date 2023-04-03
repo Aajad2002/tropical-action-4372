@@ -4,6 +4,7 @@ import axios from 'axios';
 import Carousel from './ImageSliderStays';
 import styled from 'styled-components';
 import { BsFillPeopleFill } from 'react-icons/bs'
+import { Link } from '@chakra-ui/react';
 const SingalHomeStays = () => {
     const { id } = useParams();
     const [hotel, setHotel] = useState({})
@@ -34,7 +35,9 @@ const SingalHomeStays = () => {
                     <span>Room only | non refundable</span>
                     <p className='pri'>₹-{price} <span style={{marginLeft:"20px",color:"red",textDecoration:"line-through solid red"}}>  {cancelPrice}</span></p>
                     <hr />
+                    <Link href='/payment'>
                     <button className='book'>Book Now</button>
+                    </Link>
                     <img src='https://tse1.mm.bing.net/th?id=OIP.MC7jVw4gvr2aX1wr-6xccgHaDp&pid=Api&rs=1&c=1&qlt=95&w=186&h=91' alt="promo" />
                 </div>
             </div>
