@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import Carousel from './ImageSlider';
 import styled from 'styled-components';
@@ -35,7 +35,9 @@ const SingalHotelPage = () => {
           <span>Room only | non refundable</span>
           <p className='pri'>₹-{price}</p>
           <hr/>
+          <Link to='/payment'>
            <button className='book'>Book Now</button>
+          </Link>
            <img src='https://tse1.mm.bing.net/th?id=OIP.MC7jVw4gvr2aX1wr-6xccgHaDp&pid=Api&rs=1&c=1&qlt=95&w=186&h=91' alt="promo"/>
         </div>
       </div>

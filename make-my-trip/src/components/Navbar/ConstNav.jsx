@@ -3,7 +3,7 @@ import NavbarSearchItems from "../NavbarSearchItems/NavbarSearchItems";
 import logoc from "../Essential/logoc.png"
 const ConstNav = () => {
   return (
-    <div style={{display:"flex",justifyContent:"space-around",alignItems:"center",backgroundColor:"white",width:"100%"}}>
+    <div style={{display:"flex",justifyContent:"space-around",alignItems:"center",backgroundColor:"white",width:"100%", borderBottom: "1px solid gray"}}>
        <img className='header-img-1' src={logoc} alt="yourpic" width={130}/>
       <NavbarSearchItems/>
       <div className='header_sub' style={{backgroundColor:"#1E88E5",height:"3rem"}}>
