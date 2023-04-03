@@ -31,11 +31,11 @@ const AeroplaneSearch = () => {
     }
     // console.log(search,"search")
     const handleSrc=()=>{
-        // localStorage.setItem("search", JSON.stringify(search));
-        // let params = {
-        //   }
-        //   search && (params.search=search);
-        //   setSearchParam(params)
+    //     localStorage.setItem("search", JSON.stringify(search));
+    //     let params = {
+    //       }
+    //       search && (params.search=search);
+    //       setSearchParam(params)
     }
     return (
         <div className='outer_div'>

@@ -5,7 +5,7 @@ import { InputDIv,SearchBox } from "./FlightStyle";
 
 export function FlightSearchBar(){
      const calenderData=JSON.parse(localStorage.getItem("calendar"))
-     const lsData=JSON.parse(localStorage.getItem("search"))
+     // const lsData=JSON.parse(localStorage.getItem("search"))
     return (
         <SearchBox>
            <InputDIv className="selection" style={{width:"100px"}}>

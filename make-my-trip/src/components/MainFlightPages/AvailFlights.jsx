@@ -10,19 +10,19 @@ import { useState } from 'react';
 import FlightPagination from './FlightPagination';
 import FlightSorting from './FlightSorting';
 const AvailFlights = () => {
-  const lsData=JSON.parse(localStorage.getItem("search"))
+  // const lsData=JSON.parse(localStorage.getItem(" bn"))
   const [searchParam, setSearchParam] = useSearchParams()
   const { search } = useLocation()
   // const [searchParam] = useSearchParams()
   const dispatch = useDispatch()
   // const [page, setPage] = useState(searchParam.get("page") || 1)
   const { airports, isLoading, isError } = useSelector(store => store.FlightReducer)
-  console.log(searchParam.get("search"))
+  // console.log(searchParam.get("search"))
   const paramsObj = {
     params: {
       air_line: searchParam.getAll("category"),
       type: searchParam.getAll("types"),
-      _limit: 4,
+      _limit: 5,
       _page: searchParam.get("page"),
       // src:searchParam.get("search"),
       _sort:searchParam.get("order") && "rent",
@@ -49,7 +49,7 @@ const AvailFlights = () => {
           {airports.length > 0 && airports.map(el => <FlightCard key={el.id} {...el} />)}
         </DIV>
       </div>
-      <FlightPagination/>
+      {/* <FlightPagination/> */}
       {/* <PAGE style={{backgroundColor:"white",borderRadius:"10px",width:"40%"}}>
         <button data-testid="page-prev" onClick={() => setPage(page - 1)} disabled={page == 1} >Previous</button>
         <button>{page}</button>
