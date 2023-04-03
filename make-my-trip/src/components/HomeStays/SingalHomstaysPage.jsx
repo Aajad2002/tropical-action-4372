@@ -5,6 +5,8 @@ import Carousel from './ImageSliderStays';
 import styled from 'styled-components';
 import { BsFillPeopleFill } from 'react-icons/bs'
 import { Link } from '@chakra-ui/react';
+import Footer from '../Footer/Footer';
+import ConstNav from '../Navbar/ConstNav';
 const SingalHomeStays = () => {
     const { id } = useParams();
     const [hotel, setHotel] = useState({})
@@ -18,8 +20,10 @@ const SingalHomeStays = () => {
         })
     }, [])
     return (
+      <>
+      <ConstNav/>
+      <br />
         <DIV>
-            Hello
             <div className="main">
                 <Carousel  />
                 <div className="youtube">
@@ -63,6 +67,8 @@ const SingalHomeStays = () => {
                     Always ensure that when you are talking about these things, you are linking them to – and framing them in the context of – the travelling experience.</p>
             </div>
         </DIV>
+        <Footer/>
+        </>
     )
 }
 
@@ -127,6 +133,10 @@ width: 80%;
     color: red;
   }
   .youtube{
+    img{
+      height:174px
+    }
+    margin-top:-8px;
     display: flex;
     flex-direction: column;
     margin-left: 10px;

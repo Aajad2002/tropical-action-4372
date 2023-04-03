@@ -6,6 +6,8 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiFillPlusCircle } from "react-icons/ai";
 
 export const ContactForm = () => {
+  const lsData=JSON.parse(localStorage.getItem("singleData"));
+  const calenderData=JSON.parse(localStorage.getItem("calendar"))
   return (
     <div>
             <h2 style={{fontSize:"2rem", fontWeight:"bold"}}>Flight Summary</h2>
@@ -13,9 +15,9 @@ export const ContactForm = () => {
         <div>
           <div className={styles.TripDiv}>
             <div>
-              <h3>New Delhi-Bangalore</h3>
+              <h3>{lsData.city1}-{lsData.city2}</h3>
               <p style={{color: "black" }}>
-                Departure Fri, 1 Oct
+                {calenderData}
               </p>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between" ,alignItems:"center" }}>
@@ -69,7 +71,7 @@ export const ContactForm = () => {
                     </span>
                     <span>Base Fare</span>
                   </p>
-                  <span>₹ 4,713</span>
+                  <span>₹ {lsData.rent+853}</span>
                 </div>
               </div>
               <div className={styles.FareSummary}>
@@ -110,7 +112,7 @@ export const ContactForm = () => {
                     
           
                   
-                      <span style={{fontWeight:"bolder" , marginRight:"3%"}}>₹ 5,506</span>
+                      <span style={{fontWeight:"bolder" , marginRight:"3%"}}>₹ {lsData.rent+853+793}</span>
                   
               
               </div>

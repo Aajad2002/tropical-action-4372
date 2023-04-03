@@ -27,21 +27,21 @@ function App() {
       {pathname=="/flight"?<ConstNav/>:"" }
       {pathname=="/hotel"?<ConstNav/>:"" }
       {pathname=="/home_stay"?<ConstNav/>:"" }
-      {pathname=="/flightbook/:id"?<ConstNav/>:"" }
+      {/* {pathname=="/flightbook/:id"?<ConstNav/>:"" } */}
       {pathname=="/ticket"?<ConstNav/>:"" }
       {pathname=="/review_ticket"?<ConstNav/>:"" }
-      {pathname=="/payment"?<ConstNav/>:"" }
-      {pathname=="/homestays/:id"?<ConstNav/>:"" }
-      {pathname=="/hotel/:id"?<ConstNav/>:"" }
+      {/* {pathname=="/payment"?<ConstNav/>:"" } */}
+      {/* {pathname=="/homestays/:id"?<ConstNav/>:"" } */}
+      {/* {pathname=="/hotel/:id"?<ConstNav/>:"" } */}
       {pathname=="/login"?<ConstNav/>:"" }
       {pathname=="/admin"?<ConstNav/>:"" }
       <MainRoutes />
-      {pathname=="/flightbook/:id"?<Footer/>:"" }
+      {/* {pathname=="/flightbook/:id"?<Footer/>:"" } */}
       {pathname=="/ticket"?<Footer/>:"" }
       {pathname=="/review_ticket"?<Footer/>:"" }
-      {pathname=="/payment"?<Footer/>:"" }
-      {pathname=="/homestays/:id"?<Footer/>:"" }
-      {pathname=="/hotel/:id"?<Footer/>:"" }
+      {/* {pathname=="/payment"?<Footer/>:"" } */}
+      {/* {pathname=="/homestays/:id"?<Footer/>:"" } */}
+      {/* {pathname=="/hotel/:id"?<Footer/>:"" } */}
       {pathname=="/login"?<Footer/>:"" }
       {pathname=="/admin"?<Footer/>:"" }
       {pathname=="/flight"?<Footer/>:"" }
