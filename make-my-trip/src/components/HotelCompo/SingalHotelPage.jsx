@@ -4,6 +4,8 @@ import axios from 'axios';
 import Carousel from './ImageSlider';
 import styled from 'styled-components';
 import { BsFillPeopleFill } from 'react-icons/bs'
+import ConstNav from '../Navbar/ConstNav';
+import Footer from '../Footer/Footer';
 const SingalHotelPage = () => {
   const { id } = useParams();
   const [hotel, setHotel] = useState({})
@@ -20,6 +22,9 @@ const SingalHotelPage = () => {
     })
   }, [])
   return (
+    <>
+    <ConstNav/>
+    <br />
     <DIV>
       <div className="main">
         <Carousel />
@@ -57,6 +62,8 @@ You can talk more closely about your specialties, too. For instance, if you are 
 Always ensure that when you are talking about these things, you are linking them to – and framing them in the context of – the travelling experience.</p>
       </div>
     </DIV>
+    <Footer/>
+    </>
   )
 }
 

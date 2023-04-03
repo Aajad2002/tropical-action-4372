@@ -7,6 +7,9 @@ export const Form = () => {
     const {name,value}=e.target
     setUserData(pre=>{return{...pre,[name]:value}})
   }
+  const handleAdd=()=>{
+    localStorage.setItem("userData", JSON.stringify(userData));
+  }
   return (
     <>
     <div className={styles.FormDiv}>
@@ -66,7 +69,7 @@ export const Form = () => {
             </div>
           </div>
         </div>
-        <button className={styles.addAdult}>
+        <button onClick={handleAdd} className={styles.addAdult}>
           +ADD ADULT
         </button>
       </div>

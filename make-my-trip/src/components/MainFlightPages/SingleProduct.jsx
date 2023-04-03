@@ -7,8 +7,12 @@ import { useDispatch } from 'react-redux';
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import { Link } from '@chakra-ui/react'
+import ConstNav from "../Navbar/ConstNav";
+import Footer from "../Footer/Footer";
 // import { BookingFlightDetails } from "./BookingFlightDetails"
 export function SingleProduct() {
+  const lsData=JSON.parse(localStorage.getItem("singleData"))
+  const calenderData=JSON.parse(localStorage.getItem("calendar"))
   const [data, setData] = useState({})
     const dispatch = useDispatch()
     const { id } = useParams()
@@ -22,6 +26,7 @@ export function SingleProduct() {
     }, [])
   return (
     <>
+    <ConstNav/>
       <SingleProHeader />
 
       <div
@@ -72,19 +77,19 @@ export function SingleProduct() {
                     // border: "2px solid pink",
                   }
                 }>
-                <h2 style={{ padding: "5px" }}>
-                  <span>New Delhi</span>
+                <h2 style={{ padding: "5px",margin:"4px" }}>
+                  <span>{lsData.city1}</span>
                   <span>----</span>
-                  <span>Bengaluru</span>
+                  <span>{lsData.city2}</span>
                 </h2>
                 <p style={{ padding: "5px" }}>
                   <span style={{ backgroundColor: "#ffedd1", padding: "3px" }}>
-                    Monday, Apr 3
+                    {calenderData}
                   </span>
-                  <span>Non Stop : 2h 55m</span>
+                  <span>{lsData.type} : {lsData.duration}</span>
                 </p>
                 <p style={{ padding: "5px" }}>
-                  <span style={{ fontWeight: "bold" }}>Go First </span>
+                  <span style={{ fontWeight: "bold" }}>{lsData.air_line} </span>
                   <span>G8 119</span>
                 </p>
               </div>
@@ -100,12 +105,21 @@ export function SingleProduct() {
                     padding: "2px",
                     fontSize: "small",
                   }}>
-                  CANCELLATION FEES APPLY
+                  CANCELLATION FEES:{lsData.cancellation}
+                </p>
+                <p
+                  style={{
+                    backgroundColor: "#24a091",
+                    marginLeft: "5px",
+                    padding: "2px",
+                    fontSize: "small",
+                  }}>
+                  DATE CHANGE FEES:{lsData.date_change}
                 </p>
                 <p style={{ padding: "5px", color: "blue" }}>View Fare Rules</p>
                 <p style={{ padding: "5px" }}>
                   <span>Economy</span>
-                  <span style={{ color: "#24a091" }}> GoFirst</span>
+                  <span style={{ color: "#24a091" }}> {lsData.air_line}</span>
                 </p>
               </div>
             </div>
@@ -133,8 +147,8 @@ export function SingleProduct() {
                     justifyContent: "space-between",
                     padding: "3px",
                   }}>
-                  <h3>20:25</h3>
-                  <h3>23:20</h3>
+                  <h3>{lsData.departure}</h3>
+                  <h3>{lsData.arrival}</h3>
                 </div>
                 <div
                   style={{
@@ -175,13 +189,13 @@ export function SingleProduct() {
                     padding: "3px",
                   }}>
                   <p>
-                    <span>New Delhi .</span>
-                    <span>Indira Gandi International Airport, Terminal 2</span>
+                    <span>{lsData.city1}</span>
+                    <span>{lsData.airport1}</span>
                   </p>
-                  <p>2h 55m</p>
+                  <p>{lsData.duration}</p>
                   <p>
-                    <span>Bengaluru .</span>
-                    <span>Bengaluru International Airport, Terminal 1</span>
+                    <span>{lsData.city2} .</span>
+                    <span>{lsData.airport2}</span>
                   </p>
                 </div>
               </div>
@@ -200,11 +214,11 @@ export function SingleProduct() {
                 </div>
                 <div style={{ width: "30%" }}>
                   <p style={{ fontWeight: "bold" }}>Check-in</p>
-                  <p>15 kgs (1 piece only)</p>
+                  <p>{lsData.checkin} (1 piece only)</p>
                 </div>
                 <div style={{ width: "30%" }}>
                   <p style={{ fontWeight: "bold" }}>Cadin</p>
-                  <p>7Kgs (1 piece only)</p>
+                  <p>{lsData.cabin_bag} (1 piece only)</p>
                 </div>
               </div>
             </div>
@@ -275,7 +289,7 @@ export function SingleProduct() {
                   borderBottom: "1px solid grey",
                 }}>
                 <p style={{ fontWeight: "bold" }}>Base Fare</p>
-                <p>₹ 5,500</p>
+                <p>₹ {lsData.rent}</p>
               </div>
 
               <div
@@ -311,7 +325,7 @@ export function SingleProduct() {
                   padding: "10px 0px 10px 0px",
                 }}>
                 <h3>Total Amount</h3>
-                <h3>₹ 6,353</h3>
+                <h3>₹ {lsData.rent+853}</h3>
               </div>
             </div>
           </div>
@@ -334,6 +348,7 @@ export function SingleProduct() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

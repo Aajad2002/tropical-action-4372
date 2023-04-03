@@ -1,6 +1,7 @@
 import styles from "./PopupReview.module.css";
 import { Link } from '@chakra-ui/react'
 export const Popup = () => {
+  const lsData=JSON.parse(localStorage.getItem("userData"))
   return (
     <div className={styles.popup}>
       <div className={styles.popupSection}>
@@ -14,11 +15,11 @@ export const Popup = () => {
           <h2 style={{ marginLeft: "-2%" }}>ADULT 1</h2>
           <div style={{ display: "grid", gridTemplateColumns: "50%  30%" }}>
             <div style={{ color: "gray" }}>First & Middle Name</div>
-            <div style={{ fontWeight: "bolder" }}>Pritam</div>
+            <div style={{ fontWeight: "bolder" }}>{lsData.firstName}</div>
             <div style={{ color: "gray" }}>Last Name</div>{" "}
-            <div style={{ fontWeight: "bolder" }}>Halder</div>
+            <div style={{ fontWeight: "bolder" }}>{lsData.lastName}</div>
             <div style={{ color: "gray" }}>Gender</div>{" "}
-            <div style={{ fontWeight: "bolder" }}>MALE</div>
+            <div style={{ fontWeight: "bolder" }}>{lsData.gender}</div>
           </div>
         </div>
         <div

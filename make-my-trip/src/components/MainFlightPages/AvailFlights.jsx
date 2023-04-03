@@ -10,6 +10,7 @@ import { useState } from 'react';
 import FlightPagination from './FlightPagination';
 import FlightSorting from './FlightSorting';
 const AvailFlights = () => {
+  const lsData=JSON.parse(localStorage.getItem("search"))
   const [searchParam, setSearchParam] = useSearchParams()
   const { search } = useLocation()
   // const [searchParam] = useSearchParams()
@@ -23,7 +24,7 @@ const AvailFlights = () => {
       type: searchParam.getAll("types"),
       _limit: 4,
       _page: searchParam.get("page"),
-      src:searchParam.get("search"),
+      src:lsData?lsData:null,
       _sort:searchParam.get("order") && "rent",
       _order:searchParam.get("order")
     }
@@ -41,7 +42,7 @@ const AvailFlights = () => {
   return (
     <div style={{ width: "80%"}}>
       <div style={{marginBottom:"1rem",boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
-        <H3>Flights from Chennai to Bengaluru</H3>
+        <H3> Available Flights </H3>
         <DIV style={{ backgroundColor: "white", borderRadius: "5px", padding: "1rem", width: "100%", height: "100%" }}>
           <FlightSorting/>
           {/* appent data */}

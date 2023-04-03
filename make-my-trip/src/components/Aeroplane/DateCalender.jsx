@@ -23,6 +23,7 @@ const DataCalender = () => {
     document.addEventListener("keydown", hideOnEscape, true)
     document.addEventListener("click", hideOnClickOutside, true)
   }, [])
+  
 
   // hide dropdown on ESC press
   const hideOnEscape = (e) => {
@@ -48,6 +49,10 @@ const DataCalender = () => {
     setCalendar(format(date, 'MM/dd/yyyy'))
   }
 // console.log(calendar)
+useEffect(() => {
+  // storing input name
+  localStorage.setItem("calendar", JSON.stringify(calendar));
+}, [calendar]);
   return (
     <div className="calendarWrap">
 

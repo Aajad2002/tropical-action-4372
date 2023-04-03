@@ -11,7 +11,6 @@ const AeroplaneSearch = () => {
     const [searchParam, setSearchParam] = useSearchParams()
     const [firstVal,setFirstVal]=useState("")
     const [lastVal,setLastVal]=useState("")
-    const [search,setSearch]=useState("")
     const [traveller, setTraveller] = useState(1)
     const dispatch=useDispatch()
     const handleFirstVal=(e)=>{
@@ -20,20 +19,19 @@ const AeroplaneSearch = () => {
     const handleLastVal=(e)=>{
         setLastVal(e.target.value)
     }
-    console.log(firstVal)
-    console.log(lastVal)
+    let search;
     if(firstVal==="Hyderabad" && lastVal==="Bangalore"){
-        setSearch("hyderabad_bangalore")
+        search=("hyderabad_bangalore")
     }else if(firstVal==="Hyderabad" && lastVal==="Delhi"){
-        setSearch("hyderabad_delhi")
+        search=("hyderabad_delhi")
     }else if(firstVal==="Hyderabad" && lastVal==="Chennai"){
-        setSearch("hyderabad_chenni")
+        search=("hyderabad_chenni")
     }else if(firstVal==="Hyderabad" && lastVal==="Mumbai"){
-        setSearch("hyderabad_mumbai")
+        search=("hyderabad_mumbai")
     }
-    console.log(search,"search")
+    // console.log(search,"search")
     const handleSrc=()=>{
-    
+        localStorage.setItem("search", JSON.stringify(search));
         // let params = {
         //   }
         //   search && (params.search=search);
