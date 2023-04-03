@@ -89,7 +89,7 @@ const locatiion=useLocation()
                 showConfirmButton: false,
                 timer: 1500
             })
-            navigate(location.state,{replace:true})
+            // navigate(location.state,{replace:true})
         }).catch((error) => {
             wrongalert()
         });
