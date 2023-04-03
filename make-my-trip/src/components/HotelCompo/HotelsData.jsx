@@ -21,6 +21,8 @@ useEffect(()=>{
         _sort: searchParams.get("sort")&&"price",
         _order:searchParams.get("sort"),
         //  q:searchParams.get("search")
+       city:searchParams.get("city")
+
     }
   }
   dispatch(getHotelData(obj))

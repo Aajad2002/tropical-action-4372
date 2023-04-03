@@ -12,6 +12,7 @@ import SingalHomeStays from "../components/HomeStays/SingalHomstaysPage";
 import AdminHotel from "../Admin/AdminHotel";
 import AdminNav from "../Admin/AdminNav";
 import Payment from "./Payment";
+import { Login } from "./Authentication";
 
 
 export const MainRoutes=()=>{
@@ -29,7 +30,7 @@ export const MainRoutes=()=>{
     <Route path="/home_stay" element={<HomeStay/>} />
     <Route path="/homestays/:id" element={<SingalHomeStays/>} />
     <Route path="/hotel/:id" element={<SingalHotelPage/>} />
-
+<Route path='/login' element={<Login/>}/>
     <Route path="/admin" element={<AdminNav/>}/>
     {/* <Route path='/adminHotel/:id'element={<EditData/>}/> */}
     </Routes>

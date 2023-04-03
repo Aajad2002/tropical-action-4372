@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box, Button, Input, Select } from '@chakra-ui/react'
 import { postHotelData } from '../Redux/HotelReducer/action'
 import Swal from 'sweetalert2'
-const AdminHotelForm = ({ setAdd }) => {
+const AdminHotelForm = ({ setAdd ,setEdit}) => {
     const [hotel, setHotel] = useState({
         "HotelName": "",
         "desc": "",
@@ -36,6 +36,7 @@ const AdminHotelForm = ({ setAdd }) => {
             timer:1500
             
           })
+          setEdit((prev)=>!prev)
         setAdd(false)
     }
 

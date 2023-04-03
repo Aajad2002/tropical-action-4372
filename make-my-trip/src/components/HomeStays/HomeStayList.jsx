@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useSearchParams } from 'react-router-dom'
 import { getHomeStayData } from '../../Redux/HomeStaysReducer/action'
 import HomeStayCard from './HomeStayCard'
+import ScrollButton from '../HotelCompo/AutoScrollTop'
 
 const HomeStayList = () => {
     const [searchParems] = useSearchParams()
@@ -22,6 +23,7 @@ const HomeStayList = () => {
     },[location.search])
   return (
     <div>
+        <ScrollButton/>
         {
             homeStays.length > 0 && homeStays.map((el)=>{
                 return <HomeStayCard key={el.id} {...el}/>

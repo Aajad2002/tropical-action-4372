@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Button, Input, Select, Text } from '@chakra-ui/react'
 import { postHomeStayData } from '../Redux/HomeStaysReducer/action'
-const HomeStayForm = ({ setAdd }) => {
+const HomeStayForm = ({ setAdd,setEdit }) => {
     const [homeStay, setHomeStay] = useState({
         "image": "",
         // "rating": "",
@@ -29,6 +29,7 @@ const HomeStayForm = ({ setAdd }) => {
     }
     const handleClick = () => {
         postHomeStayData(homeStay)
+        setEdit((prev)=>!prev)
         setAdd(false)
     }
 

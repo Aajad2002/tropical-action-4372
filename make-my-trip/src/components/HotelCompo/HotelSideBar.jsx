@@ -29,12 +29,16 @@ const HotelSideBar = () => {
     val == sort ? setSort(null) : setSort(val);
     // setSort(e.target.value)
   };
+  const city=JSON.parse(localStorage.getItem("city"))
+  // console.log(city)
+  // const city=loc
   useEffect(() => {
-    if (sort || star) {
+    if (sort || star||city) {
       let params = {};
       star && (params.star = star);
       sort && (params.sort = sort);
       // search && (params.search=search)
+      city && (params.city=city)
       setSearchParmas(params);
     }
   }, [sort, star]);

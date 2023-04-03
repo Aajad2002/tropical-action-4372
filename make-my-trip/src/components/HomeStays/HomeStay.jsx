@@ -20,7 +20,7 @@ function HomeStay() {
       <MapCarosel2/>
       <Footer/> */}
       {/* <HomeStays/> */}
-      <div style={{ width: "25%" }}><Sidebar/></div>
+      <div style={{ width: "25%","margin-top":"23px" }}><Sidebar/></div>
       <div style={{width: "75%"}}><HomeStayList/></div>
       
     </div>

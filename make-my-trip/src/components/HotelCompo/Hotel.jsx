@@ -27,7 +27,8 @@ const DIV=styled.div`
     .side{
         width: 25%;
         /* text-align: right; */
-        border-right: 2px solid black;
+        /* border-right: 2px solid black; */
+        margin-top:23px
     }
     .data1{
         width: 85%;

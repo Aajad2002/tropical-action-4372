@@ -6,6 +6,13 @@ import  DataCalender  from '../Aeroplane/DateCalender';
 import {Link} from '@chakra-ui/react';
 const HotelSearch = () => {
     const [customer, seCustomer] = useState(1)
+    const [val,setVal]=useState("")
+
+    const handleSearch=()=>[
+         localStorage.setItem("city",JSON.stringify(val))
+        // setCity(val)
+    ]
+
     return (
         <div className='outer_div_hotel'>
             <div className='first_div_hotel'>
@@ -27,6 +34,8 @@ const HotelSearch = () => {
                         type="text"
                         name="from"
                         placeholder=""
+                        value={val}
+                        onChange={(e)=>setVal(e.target.value)}
                     >
                         <option>select</option>
                         <option value='goa'>Goa</option>
@@ -75,7 +84,7 @@ const HotelSearch = () => {
                 </div>
             </div>
            <Link href='/hotel'>
-           <button className='src_btn_hotel'>SEARCH</button>
+           <button className='src_btn_hotel' onClick={handleSearch}>SEARCH</button>
            </Link>
         </div>
     );

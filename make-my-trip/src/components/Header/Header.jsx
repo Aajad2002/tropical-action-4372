@@ -38,9 +38,11 @@ function Header() {
                         <div>
                             <img src={travel} alt="My bix" width="25" />
                         </div>
+                        <Link href='/login'>
                         <div>
                             <p>Login or Create Account</p>
                         </div>
+                        </Link>
                     </div>
                     <Link href="/admin">
                     <div className='header_sub' style={{backgroundColor:"#1E88E5"}}>

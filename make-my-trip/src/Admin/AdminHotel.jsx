@@ -19,7 +19,7 @@ useEffect(()=>{
   return (
     <div className='main'>
       <div className='btnDiv'>
-      {add?<AdminHotelForm setAdd={setAdd}/>:<button style={{ background:"linear-gradient(#061526, #144073)"  }} onClick={()=>setAdd(true)}> Add Hotel</button>} 
+      {add?<AdminHotelForm setAdd={setAdd} setEdit={setEdit}/>:<button style={{ background:"linear-gradient(#061526, #144073)"  }} onClick={()=>setAdd(true)}> Add Hotel</button>} 
       </div>
       
       {/* {edit && <EditData />} */}

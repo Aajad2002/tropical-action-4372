@@ -20,7 +20,7 @@ useEffect(()=>{
   return (
     <div className='main'>
       <div className='btnDiv'>
-      {add?<HomeStayForm setAdd={setAdd}/>:<button style={{ background:"linear-gradient(#061526, #144073)"  }} onClick={()=>setAdd(true)}>  Add HomeStay</button>} 
+      {add?<HomeStayForm setAdd={setAdd} setEdit={setEdit}/>:<button style={{ background:"linear-gradient(#061526, #144073)"  }} onClick={()=>setAdd(true)}>  Add HomeStay</button>} 
       </div>
       <div className='homeStayData'>
       {

@@ -32,27 +32,31 @@
 #main {
   display: flex;
   align-items: center;
-  width: 70%;
-  height: 90vh;
+  width: 57%;
+  height: 80vh;
   /* border: 1px solid red; */
   justify-content: space-between;
   padding-top: 4%;
   padding: 3%;
   /* background-color: #333; */
-  background: #22c1c3;
-  /* fallback for old browsers */
+  /* background: #b59ec7;  /* fallback for old browsers */
+ 
+background: #2b5876;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* background: #22c1c3;
   background: -webkit-linear-gradient(to right, #fdbb2d, #22c1c3);
-  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #fdbb2d, #22c1c3);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  
+  */
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  margin: auto;
+  margin: auto;  
  
   
 }
-
 #form input {
   width: 90%;
   padding: 10px;
