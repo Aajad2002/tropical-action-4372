@@ -7,7 +7,7 @@ import { RecaptchaVerifier, signInWithPhoneNumber, } from 'firebase/auth';
 import { Box, Button, Input, PinInput, PinInputField, Text } from '@chakra-ui/react';
 
 import { useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Toaster, toast } from "react-hot-toast"
 import Swal from 'sweetalert2'
 import { async } from '@firebase/util';
@@ -24,7 +24,7 @@ export const Login = () => {
     ///
     const navigate = useNavigate()
  
-
+const locatiion=useLocation()
 
 
    
@@ -81,6 +81,7 @@ export const Login = () => {
         window.confirmationResult.confirm(otp).then(async (result) => {
 
             setuser(result.user)
+            localStorage.setItem("isAuth",true)  
             Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -88,7 +89,7 @@ export const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
             })
-            navigate("/")
+            navigate(location.state,{replace:true})
         }).catch((error) => {
             wrongalert()
         });
