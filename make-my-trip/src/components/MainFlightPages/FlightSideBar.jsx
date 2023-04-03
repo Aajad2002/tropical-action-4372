@@ -8,6 +8,7 @@ const FlightSideBar = () => {
   const initialOrder=searchParam.get("order")
   const [category, setCategory] = useState(initialCategory || [])
   const [order,setOrder]=useState(initialOrder || "")
+  const [page, setPage] = useState(Number(searchParam.get("page")) || 1)
   const handleChange = (e) => {
     let newCategory = [...category]
     const value = e.target.value
@@ -40,10 +41,11 @@ const FlightSideBar = () => {
     let params = {
       category: category,
       types: types,
+      page:page
     }
     order && (params.order=order);
     setSearchParam(params)
-  }, [category, types,order])
+  }, [category, types,order,page])
   return (
     <div style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor: "white", borderRadius: "5px", padding: "1rem", width: "20%",height:"700px" }}>
       <DIV>
@@ -120,6 +122,11 @@ const FlightSideBar = () => {
           <label>SpiceJet</label>
         </div>
       </DIV>
+      <PAGE style={{backgroundColor:"white",borderRadius:"10px",width:"100%", display:"flex",marginTop:"20px"}}>
+        <button  onClick={() => setPage(page - 1)} disabled={page == 1} >Previous</button>
+        <button>{page}</button>
+        <button  onClick={() => setPage(page + 1)} disabled={page >= 10}>Next</button>
+      </PAGE>
     </div>
   );
 }
@@ -131,5 +138,15 @@ h3{
   font-size:1.5em;
   font-weight: bold;
 }
+`
+const PAGE = styled.div`
+  button {
+    margin: 20px;
+    border: none;
+    width: 100px;
+    height: 35px;
+    margin-bottom: 10px;
+    border:1px solid gray;
+  }
 `
 export default FlightSideBar;

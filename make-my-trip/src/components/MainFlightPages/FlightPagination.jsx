@@ -9,11 +9,11 @@ const FlightPagination = () => {
         let params = {
       page:page
         }
-        setSearchParam(params)
+        // setSearchParam(params)
     }, [page])
   return (
     <div>
-        <PAGE style={{backgroundColor:"white",borderRadius:"10px",width:"40%"}}>
+        <PAGE style={{backgroundColor:"white",borderRadius:"10px",width:"60%"}}>
         <button data-testid="page-prev" onClick={() => setPage(page - 1)} disabled={page == 1} >Previous</button>
         <button>{page}</button>
         <button data-testid="page-next" onClick={() => setPage(page + 1)} disabled={page >= 10}>Next</button>
@@ -25,7 +25,7 @@ const PAGE = styled.div`
   button {
     margin: 20px;
     border: none;
-    width: 100px;
+    width: 800px;
     height: 35px;
     margin-bottom: 10px;
     border:1px solid gray;
