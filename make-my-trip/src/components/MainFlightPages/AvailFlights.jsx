@@ -24,7 +24,7 @@ const AvailFlights = () => {
       type: searchParam.getAll("types"),
       _limit: 4,
       _page: searchParam.get("page"),
-      src:lsData?lsData:null,
+      // src:searchParam.get("search"),
       _sort:searchParam.get("order") && "rent",
       _order:searchParam.get("order")
     }

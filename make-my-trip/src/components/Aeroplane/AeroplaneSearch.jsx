@@ -31,13 +31,12 @@ const AeroplaneSearch = () => {
     }
     // console.log(search,"search")
     const handleSrc=()=>{
-        localStorage.setItem("search", JSON.stringify(search));
+        // localStorage.setItem("search", JSON.stringify(search));
         // let params = {
         //   }
         //   search && (params.search=search);
         //   setSearchParam(params)
     }
-    // console.log((DataCalender().props.selected))
     return (
         <div className='outer_div'>
             <div className='first_div'>
