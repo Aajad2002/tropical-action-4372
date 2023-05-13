@@ -16,19 +16,61 @@ import {
   InputRightElement
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
+import Swal from "sweetalert2"
+import axios from "axios";
+import { useNavigate } from "react-router-dom"
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const handleShowClick = () => setShowPassword(!showPassword);
+  const navigate = useNavigate();
 
+  const handlelogin = (e) => {
+    e.preventDefault()
+    let obj = { email, password }
+    // console.log("submit",obj)
+    axios.post(`https://trip-53yq.onrender.com/users/login`, obj).then((res) => {
+      console.log(res.data)
+      if (res.data.msg == "User doesn't exits on this email") {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: `${res.data.msg}`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      } else {
+        if (res.data.msg == "Wrong credentials") {
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: `${res.data.msg}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        } else {
+          localStorage.setItem('isAuth',"true")
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: `${res.data.msg}`,
+            showConfirmButton: false,
+            timer: 1500
+          })
+          (navigate("/",{replace:true}))
+        }
+      }
+    })
+  }
   return (
     <Flex
-      flexDirection="column"  
-     
+      flexDirection="column"
+
       justifyContent="center"
       alignItems="center"
     >
@@ -54,7 +96,7 @@ const Login = () => {
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="email" placeholder="email address" />
+                  <Input type="email" placeholder="email address" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -66,7 +108,7 @@ const Login = () => {
                   />
                   <Input
                     type={showPassword ? "text" : "password"}
-                    placeholder="Password"
+                    placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}
                   />
                   <InputRightElement width="4.5rem">
                     <Button h="1.75rem" size="sm" onClick={handleShowClick}>
@@ -84,6 +126,7 @@ const Login = () => {
                 variant="solid"
                 colorScheme="teal"
                 width="full"
+                onClick={handlelogin}
               >
                 Login
               </Button>
@@ -93,7 +136,7 @@ const Login = () => {
       </Stack>
       <Box>
         New to us?{" "}
-        <Link  color="teal.500" href="/signup">
+        <Link color="teal.500" href="/signup">
           Sign Up
         </Link>
       </Box>
