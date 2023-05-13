@@ -1,4 +1,7 @@
 import { useState } from "react";
+import axios from "axios"
+import Swal from "sweetalert2"
+import {useNavigate} from "react-router-dom"
 import {
   Flex,
   Heading,
@@ -16,19 +19,48 @@ import {
   InputRightElement
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
-import {MdEmail} from "react-icons/md"
+import { MdEmail } from "react-icons/md"
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const navigate = useNavigate();
   const handleShowClick = () => setShowPassword(!showPassword);
 
+  const handlesign = (e) => {
+    e.preventDefault()
+    let obj = { name, email, password }
+    // console.log("submit",obj)
+    axios.post(`https://trip-53yq.onrender.com/users/register`, obj).then((res) => {
+      console.log(res.data)
+      if (res.data.msg == "User already exists on this email") {
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: `${res.data.msg}`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      } else {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: `${res.data.msg}`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+        (navigate("/login"))
+      }
+    })
+  }
   return (
     <Flex
-      flexDirection="column"  
-     
+      flexDirection="column"
+
       justifyContent="center"
       alignItems="center"
     >
@@ -38,8 +70,8 @@ const Signup = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Avatar bg="teal.500" />
-        <Heading color="teal.400">Welcome</Heading>
+
+
         <Box minW={{ base: "90%", md: "468px" }}>
           <form>
             <Stack
@@ -48,13 +80,13 @@ const Signup = () => {
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
             >
-                <FormControl>
+              <FormControl>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
                   />
-                  <Input type="text" placeholder="Enter name " />
+                  <Input type="text" placeholder="Enter name " value={name} onChange={(e) => setName(e.target.value)} />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -63,7 +95,7 @@ const Signup = () => {
                     pointerEvents="none"
                     children={<MdEmail color="gray.300" />}
                   />
-                  <Input type="email" placeholder="email address" />
+                  <Input type="email" placeholder="email address" value={email} onChange={(e) => setEmail(e.target.value)} />
                 </InputGroup>
               </FormControl>
               <FormControl>
@@ -75,7 +107,7 @@ const Signup = () => {
                   />
                   <Input
                     type={showPassword ? "text" : "password"}
-                    placeholder="Password"
+                    placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}
                   />
                   <InputRightElement width="4.5rem">
                     <Button h="1.75rem" size="sm" onClick={handleShowClick}>
@@ -93,8 +125,9 @@ const Signup = () => {
                 variant="solid"
                 colorScheme="teal"
                 width="full"
+                onClick={handlesign}
               >
-                Login
+                Signup
               </Button>
             </Stack>
           </form>

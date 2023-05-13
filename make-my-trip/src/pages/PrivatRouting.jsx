@@ -3,6 +3,7 @@ import { useLocation,Navigate } from 'react-router-dom'
 
 const PrivatRouting = ({children}) => {
     const isAuth=localStorage.getItem("isAuth")
+    console.log(isAuth)
 const location =useLocation()
     if(!isAuth){
         return <Navigate to='/login' state={location.pathname} replace />
