@@ -12,10 +12,11 @@ import SingalHomeStays from "../components/HomeStays/SingalHomstaysPage";
 import AdminHotel from "../Admin/AdminHotel";
 import AdminNav from "../Admin/AdminNav";
 import Payment from "./Payment";
-import { Login } from "./Authentication";
+import Login from "./Authentication";
 import Footer from "../components/Footer/Footer";
 
 import PrivatRouting from "./PrivatRouting";
+import Signup from "./Signup";
 export const MainRoutes=()=>{
     return(
         <Routes>
@@ -45,6 +46,7 @@ export const MainRoutes=()=>{
         </PrivatRouting>
     } />
 <Route path='/login' element={<Login/>}/>
+<Route path="/signup" element={<Signup/>} />
     <Route path="/admin" element={
         <PrivatRouting>
             <AdminNav/>

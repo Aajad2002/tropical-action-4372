@@ -16,11 +16,11 @@ import {
   InputRightElement
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
-
+import {MdEmail} from "react-icons/md"
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
-const Login = () => {
+const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
@@ -48,11 +48,20 @@ const Login = () => {
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
             >
-              <FormControl>
+                <FormControl>
                 <InputGroup>
                   <InputLeftElement
                     pointerEvents="none"
                     children={<CFaUserAlt color="gray.300" />}
+                  />
+                  <Input type="text" placeholder="Enter name " />
+                </InputGroup>
+              </FormControl>
+              <FormControl>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    children={<MdEmail color="gray.300" />}
                   />
                   <Input type="email" placeholder="email address" />
                 </InputGroup>
@@ -93,11 +102,11 @@ const Login = () => {
       </Stack>
       <Box>
         New to us?{" "}
-        <Link  color="teal.500" href="/signup">
-          Sign Up
+        <Link color="teal.500" href="/login">
+          Login
         </Link>
       </Box>
     </Flex>
   );
 };
-export default Login
+export default Signup
