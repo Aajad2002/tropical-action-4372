@@ -74,7 +74,7 @@ const CardHotel = ({ el, setEdit }) => {
           "rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset",
         padding: "20px",
       }}
-      w={"450px"}>
+      w={"450px"} m={"auto"}>
       <Image w={"100%"} h={200} src={image} alt={star} />
       <Text
         style={{ fontSize: "20px", fontWeight: "bold", paddingTop: "1rem" }}>
