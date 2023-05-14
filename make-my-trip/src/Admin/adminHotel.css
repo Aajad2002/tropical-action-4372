@@ -30,3 +30,49 @@
     /* grid-template-rows: repeat(2,auto); */
     gap: 20px 20px
 }
+@media all and (min-width: 768px) and (max-width: 1024px){
+    .hotelData {
+       
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        width: 100%;
+        gap: 20px 20px;
+        border:0px solid red;
+    }
+    .btnDiv {
+        padding: 20px;
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    }
+    .btnDiv>button {
+        width: 200px;
+        padding: 10px;
+        border-radius: 8px;
+        color: white;
+        font-size: larger;
+    }
+}
+@media all and (min-width: 320px) and (max-width: 767px){
+    .hotelData {
+       
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        width: 100%;
+    }
+    .btnDiv {
+       
+        width: 50%;
+        border: 0px solid rgb(34, 255, 0);
+        margin: auto;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    }
+    .btnDiv>button {
+        border: 0px solid red;
+        border-radius: 8px;
+        color: white;
+        font-size: larger;
+    }
+}
