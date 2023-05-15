@@ -24,8 +24,7 @@ const AdminNav = () => {
         <div className="navItem">
         <div onClick={handlehotel}>Hotel DataBase</div>
         <div onClick={handleHomStay}>HomeStay DataBase</div>
-        <div>Flight DataBase</div>
-        </div>
+       </div>
         
         
        
