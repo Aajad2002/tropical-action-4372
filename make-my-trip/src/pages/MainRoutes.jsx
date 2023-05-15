@@ -17,6 +17,7 @@ import Footer from "../components/Footer/Footer";
 
 import PrivatRouting from "./PrivatRouting";
 import Signup from "./Signup";
+import AdminLoginPage from "../components/adminLogin/AdminLoginPage";
 export const MainRoutes=()=>{
     return(
         <Routes>
@@ -35,6 +36,7 @@ export const MainRoutes=()=>{
     <Route path="/hotel" element={<HotelPage/>} />
     <Route path="/home_stay_home" element={""}/>
     <Route path="/home_stay" element={<HomeStay/>} />
+    <Route path="/adinLogin" element={<AdminLoginPage/>}/>
     <Route path="/homestays/:id" element={
         <PrivatRouting>
             <SingalHomeStays/>
@@ -48,9 +50,7 @@ export const MainRoutes=()=>{
 <Route path='/login' element={<Login/>}/>
 <Route path="/signup" element={<Signup/>} />
     <Route path="/admin" element={
-        <PrivatRouting>
             <AdminNav/>
-        </PrivatRouting>
     }/>
     </Routes>
     )

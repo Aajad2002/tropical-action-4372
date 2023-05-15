@@ -69,7 +69,7 @@ export const BookingDetails = () => {
           </div>
           <div>
             <h5>$99</h5>
-            <p style={{ fontSize: "smaller" }}>(18% GST included</p>
+            <p style={{ fontSize: "smaller" }}>(18% GST included)</p>
           </div>{" "}
           <div>
             <button className={styles.covidButton}>
@@ -83,7 +83,7 @@ export const BookingDetails = () => {
       </div>
       <div className={styles.bookingDiv}>
         <p style={{fontSize:"14px", fontWeight:"400"}}>By clicking on the Continue button below to proceed with the booking. I confirm that I have read and I accept the<span style={{color:"#008cff"}}> Fare Rules</span>, the <span style={{color:"#008cff"}}>Privacy Policy</span>, the <span style={{color:"#008cff"}}>User Agreement</span> and <span style={{color:"#008cff"}}>Terms of Service</span> of MakeMyTrip</p>
- <Link href="/review_ticket">    <button className={styles.continue}>CONTINUE</button></Link> </div>
+ <Link href="/payment">    <button className={styles.continue}>CONTINUE</button></Link> </div>
  
     </div>
   );
