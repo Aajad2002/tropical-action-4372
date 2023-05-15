@@ -3,24 +3,24 @@ import { Link } from '@chakra-ui/react'
 
 export const BookingDetails = () => {
   return (
-    <div>
-      <h2 style={{ marginLeft: "19%" }}>Booking details will be sent to</h2>
+    <div style={{width:"100%"}}>
+      <h2>Booking details will be sent to</h2>
       <div className={styles.bookingDiv}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div>
           <div>
             {" "}
             <p>Country Code</p>
-            <input placeholder="India(91)" />
+            <input style={{width:"100%"}} placeholder="India(91)" />
           </div>
           <div>
             {" "}
             <p>Mobile No</p>
-            <input placeholder="Mobile No" />
+            <input style={{width:"100%"}} placeholder="Mobile No" />
           </div>{" "}
           <div>
             {" "}
             <p>Email</p>
-            <input placeholder="Email" />
+            <input style={{width:"100%"}} placeholder="Email" />
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import AdminHotel from "./AdminHotel";
 import AdminHomeStay from "./AdminHomeStay";
 import Trip_Mate from "../components/Essential/Trip_Mate.png";
 import "../Admin/adminNav.css"
+import { Link } from "react-router-dom"; 
 const AdminNav = () => {
   const [hotel, setHotel] = useState(false);
   const [homeStay, setHomeStay] = useState(false);
@@ -19,13 +20,14 @@ const AdminNav = () => {
     <div>
       <div className="Navbar" style={{ background:"linear-gradient(#061526, #144073)"  }}>
         <div className="logoImg">
+          <Link to="/">
           <img style={{height:"115px", width:"90%"}} src={Trip_Mate}/>
+          </Link>
         </div>
         <div className="navItem">
         <div onClick={handlehotel}>Hotel DataBase</div>
         <div onClick={handleHomStay}>HomeStay DataBase</div>
-        <div>Flight DataBase</div>
-        </div>
+       </div>
         
         
        

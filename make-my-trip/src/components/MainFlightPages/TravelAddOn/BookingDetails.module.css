@@ -4,15 +4,12 @@ body {
 
 .bookingDiv {
   min-height: 40px;
-  padding: 15px 32px;
   background: white;
   box-shadow: 0 1px 4px 0 rgb(0 0 0 / 20%);
   color: black;
   border-radius: 10px;
-  width: 60%;
-  margin-left: 6%;
+  width:100%;
   margin-top: 1%;
-  text-align: left;
 }
 .continue {
   background: linear-gradient(95deg, #53b2fe, #065af3) !important;

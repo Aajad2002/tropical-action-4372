@@ -1,151 +1,162 @@
 import React, { useState } from 'react';
-import "./AeroplaneSearch.css"
 import { AiOutlineUserAdd } from "react-icons/ai"
 import { AiOutlineUserDelete } from "react-icons/ai"
-import DataCalender from './DateCalender';
 import { Center, Link } from '@chakra-ui/react'
 import { useSearchParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { getDate } from '../../Redux/FlightReducer/action';
+import {
+    Flex,Box,Wrap,FormLabel,Text,Input
+  } from '@chakra-ui/react'
 const AeroplaneSearch = () => {
     const [searchParam, setSearchParam] = useSearchParams()
-    const [firstVal,setFirstVal]=useState("")
-    const [lastVal,setLastVal]=useState("")
+    const [firstVal, setFirstVal] = useState("")
+    const [lastVal, setLastVal] = useState("")
     const [traveller, setTraveller] = useState(1)
-    const dispatch=useDispatch()
-    const handleFirstVal=(e)=>{
+    const dispatch = useDispatch()
+    const handleFirstVal = (e) => {
         setFirstVal(e.target.value)
     }
-    const handleLastVal=(e)=>{
+    const handleLastVal = (e) => {
         setLastVal(e.target.value)
     }
     let search;
-    if(firstVal==="Hyderabad" && lastVal==="Bangalore"){
-        search=("hyderabad_bangalore")
-    }else if(firstVal==="Hyderabad" && lastVal==="Delhi"){
-        search=("hyderabad_delhi")
-    }else if(firstVal==="Hyderabad" && lastVal==="Chennai"){
-        search=("hyderabad_chenni")
-    }else if(firstVal==="Hyderabad" && lastVal==="Mumbai"){
-        search=("hyderabad_mumbai")
+    if (firstVal === "Hyderabad" && lastVal === "Bangalore") {
+        search = ("hyderabad_bangalore")
+    } else if (firstVal === "Hyderabad" && lastVal === "Delhi") {
+        search = ("hyderabad_delhi")
+    } else if (firstVal === "Hyderabad" && lastVal === "Chennai") {
+        search = ("hyderabad_chenni")
+    } else if (firstVal === "Hyderabad" && lastVal === "Mumbai") {
+        search = ("hyderabad_mumbai")
     }
     // console.log(search,"search")
-    const handleSrc=()=>{
-    //     localStorage.setItem("search", JSON.stringify(search));
-    //     let params = {
-    //       }
-    //       search && (params.search=search);
-    //       setSearchParam(params)
+    const handleSrc = () => {
+        //     localStorage.setItem("search", JSON.stringify(search));
+        //     let params = {
+        //       }
+        //       search && (params.search=search);
+        //       setSearchParam(params)
     }
-    return (
-        <div className='outer_div'>
-            <div className='first_div'>
-                <div className='way_options'>
-                    <span className='way_type'>
-                        <input type="radio" />
-                        <label>One Way</label>
-                    </span>
-                    <span className='way_type'>
-                        <input type="radio" />
-                        <label>Round Trip</label>
-                    </span>
-                    <span className='way_type'>
-                        <input type="radio" />
-                        <label>Multi city</label>
-                    </span>
-                </div>
-                <div>
-                    <p>Book International and Domestic Flight</p>
-                </div>
-            </div>
-            <div className='location_select'>
-                <div className='location_opt'>
-                    <p>From</p>
-                    <select className='first_bold'
-                        type="text"
-                        name="from"
-                       onChange={handleFirstVal}
+    const basicBoxStyles = {
+        // display: 'flex',
+        alignItems: 'center',
+        // justifyContent: 'center',
+        textAlign: 'center',
+        boxSize: '200px',
+        color: 'black',
+        px: 4,
+        borderRadius: 'md',
+        boxShadow: 'md',
+      }
+      
+      return (
+        <Box px="10%">
+          <Flex flexWrap='wrap' justifyContent='space-evenly' alignItems='center'>
+            <Box sx={basicBoxStyles} width='100%' maxWidth={['100%', '100%', '50%', '25%']} border='1px' borderColor='black' mb={[4, 4, 0, 0]} mr={[0, 0, 4, 4]}>
+            <Text fontSize='3xl'>From</Text>
+      <select style={{
+        padding: '10px',
+        borderRadius: '5px',
+        border: '1px solid black',
+        fontSize: '16px'
+      }} className='first_bold'
+        type="text"
+        name="from"
+        onChange={handleFirstVal}
+      >
+        <option>Select</option>
+        <option value='Hyderabad'>Hyderabad</option>
+        <option value='Bangalore'>Bangalore</option>
+        <option value='Mumbai'>Mumbai</option>
+        <option value='Delhi'>Delhi</option>
+        <option value='Chennai'>Chennai</option>
+      </select>
+            </Box>
+            <Box sx={basicBoxStyles} width='100%' maxWidth={['100%', '100%', '50%', '25%']} border='1px' borderColor='black' mb={[4, 4, 0, 0]} mr={[0, 0, 4, 4]}>
+            <Text fontSize='3xl'>To</Text>
+      <select style={{
+        padding: '10px',
+        borderRadius: '5px',
+        border: '1px solid black',
+        fontSize: '16px'
+      }} className='first_bold'
+        type="text"
+        name="from"
+        onChange={handleFirstVal}
+      >
+        <option>Select</option>
+        <option value='Hyderabad'>Hyderabad</option>
+        <option value='Bangalore'>Bangalore</option>
+        <option value='Mumbai'>Mumbai</option>
+        <option value='Delhi'>Delhi</option>
+        <option value='Chennai'>Chennai</option>
+      </select>
+            </Box>
+            <Box sx={basicBoxStyles} width='100%' maxWidth={['100%', '100%', '50%', '25%']} border='1px' borderColor='black' mb={[4, 4, 0, 0]} mr={[0, 0, 4, 4]}>
+              <p>Traveller & Class </p>
+              <span className='first_bold'>{traveller}</span><span className='second_bold'>Traveller</span><span>&nbsp;&nbsp;</span><span>
+                <button onClick={() => setTraveller(traveller + 1)}><AiOutlineUserAdd /></button>
+                /<button onClick={() => setTraveller(traveller - 1)} disabled={traveller == 1}><AiOutlineUserDelete /></button>
+              </span>
+              <p>Economy/Premium Economy</p>
+              <p style={{ color: "red" }}>Group Bookings Available!</p>
+            </Box>
+            <Box sx={basicBoxStyles} width='100%' maxWidth={['100%', '100%', '50%', '25%']} border='1px' borderColor='black' mb={[4, 4, 0, 0]} mr={[0, 0, 4, 4]}>
+              <p>Departure </p>
+              <div className='second_bold' style={{ paddingTop: "25px", zIndex: "999" }}>
+              <Wrap mb="8">
+                  <FormLabel width={"30%"}>
+                    <Text
+                      fontWeight={"semibold"}
+                      fontSize={"lg"}
+                      fontFamily={"Manrope"}
                     >
-                        <option>select</option>
-                        <option value='Hyderabad'>Hyderabad</option>
-                        <option value='Bangalore'>Bangalore</option>
-                        <option value='Mumbai'>Mumbai</option>
-                        <option value='Delhi'>Delhi</option>
-                        <option value='Chennai'>Chennai</option>
-                    </select>
+                    </Text>
+                  </FormLabel>
+                  <Input
+                    type="date"
+                    name="birthday"
+                  />
+                </Wrap>
                 </div>
-                {/* <div>
-                    <span className='location_opt_float'>&#8651;</span>
-                </div> */}
-                <div className='location_opt'>
-                    <p>To</p>
-                    <select className='first_bold'
-                        type="text"
-                        name="from"
-                        onChange={handleLastVal}
+            </Box>
+            {/* adding brightness property to the element */}
+            <Box sx={basicBoxStyles}  width='100%' maxWidth={['100%', '100%', '50%', '25%']} border='1px' borderColor='black' mb={[4, 4, 0, 0]} mr={[0, 0, 4, 4]}>
+                <p>Return </p>
+                <div className='second_bold' style={{ paddingTop: "25px" }}>
+                <Wrap mb="8">
+                  <FormLabel width={"30%"}>
+                    <Text
+                      fontWeight={"semibold"}
+                      fontSize={"lg"}
+                      fontFamily={"Manrope"}
                     >
-                        <option>select</option>
-                        <option value='Hyderabad'>Hyderabad</option>
-                        <option value='Bangalore'>Bangalore</option>
-                        <option value='Mumbai'>Mumbai</option>
-                        <option value='Delhi'>Delhi</option>
-                        <option value='Chennai'>Chennai</option>
-                    </select>
-                </div>
-                <div className='location_opt'>
-                    <p>Departure </p>
-                    <div className='second_bold' style={{ paddingTop: "25px",zIndex:"999" }}><DataCalender /></div>
-                </div>
-                <div className='location_opt'>
-                    <p>Return </p>
-                    <div className='second_bold' style={{ paddingTop: "25px" }}><DataCalender /></div>
-                </div>
-                <div className='location_opt'>
-                    <p>Traveller & Class </p>
-                    <span className='first_bold'>{traveller}</span><span className='second_bold'>Traveller</span><span>&nbsp;&nbsp;</span><span>
-                        <button onClick={() => setTraveller(traveller + 1)}><AiOutlineUserAdd /></button>
-                        /<button onClick={() => setTraveller(traveller - 1)} disabled={traveller == 1}><AiOutlineUserDelete /></button>
-                    </span>
-                    <p>Economy/Premium Economy</p>
-                    <p style={{ color: "red" }}>Group Bookings Available!</p>
-                </div>
-            </div>
-            <div className='last_opts'>
-                <div className='first_div_last'>
-                    <span style={{paddingTop:"4px"}}>Select A Fare Type:</span>
-                    <span className='back_shadow'>
-                        <input type="radio" />
-                        <label>Regular Fares</label>
-                    </span>
-                    <span className='back_shadow'>
-                        <input type="radio" />
-                        <label>Regula</label>
-                    </span>
-                    <span className='back_shadow'>
-                        <input type="radio" />
-                        <label>Regular Fares</label>
-                    </span>
-                    <span className='back_shadow'>
-                        <input type="radio" />
-                        <label>Regular</label>
-                    </span>
-                    {/* <span className='back_shadow'>
-                        <input type="radio" />
-                        <label>Regular Fares</label></span> */}
-                </div>
-                {/* <div className='second_div_last'>
-                    <span>Trending Search:</span>
-                    <span className='back_shadow' style={{textAlign:"center"}}>Chenni
-                        <span>&#8594;</span>Kuala Lumpur</span>
-                    <span className='back_shadow'>Chenni
-                        <span>&#8594;</span>Hyderabad</span>
-                </div> */}
-            </div>
-            <Link href="/flight">
-            <button className='src_btn' onClick={handleSrc}>SEARCH</button>
-                </Link>
-            
-        </div>
+                    </Text>
+                  </FormLabel>
+                  <Input
+                    type="date"
+                    name="birthday"
+                  />
+                </Wrap>
+                    </div>
+            </Box>
+        </Flex>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+  <Link href="/flight">
+    <button style={{ 
+      backgroundColor: 'blue',
+      color: 'white',
+      padding: '10px 20px',
+      borderRadius: '5px',
+      border: 'none',
+      fontSize: '16px',
+      fontWeight: 'bold'
+    }} onClick={handleSrc}>SEARCH</button>
+  </Link>
+</div>
+
+    </Box>
     );
 }
 

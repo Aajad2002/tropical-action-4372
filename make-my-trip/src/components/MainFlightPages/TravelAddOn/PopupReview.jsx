@@ -15,7 +15,7 @@ export const Popup = () => {
           <h2 style={{ marginLeft: "-2%" }}>ADULT 1</h2>
           <div style={{ display: "grid", gridTemplateColumns: "50%  30%" }}>
             <div style={{ color: "gray" }}>First & Middle Name</div>
-            <div style={{ fontWeight: "bolder" }}>{lsData.firstName}</div>
+            <div style={{ fontWeight: "bolder" }}>{lsData.firstName?lsData.firstName:"pritam"}</div>
             <div style={{ color: "gray" }}>Last Name</div>{" "}
             <div style={{ fontWeight: "bolder" }}>{lsData.lastName}</div>
             <div style={{ color: "gray" }}>Gender</div>{" "}

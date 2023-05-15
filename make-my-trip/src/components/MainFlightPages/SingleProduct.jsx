@@ -9,42 +9,47 @@ import { useParams } from 'react-router-dom';
 import { Link } from '@chakra-ui/react'
 import ConstNav from "../Navbar/ConstNav";
 import Footer from "../Footer/Footer";
+import styled from "styled-components";
+import {
+  Box,
+  Flex,
+  Text,
+  Heading,
+  Divider,
+  Badge,
+  Icon,
+} from "@chakra-ui/react";
+import { FaRegCircle } from "react-icons/fa";
 // import { BookingFlightDetails } from "./BookingFlightDetails"
 export function SingleProduct() {
-  const lsData=JSON.parse(localStorage.getItem("singleData"))
-  const calenderData=JSON.parse(localStorage.getItem("calendar"))
+  const lsData = JSON.parse(localStorage.getItem("singleData"))
+  const calenderData = JSON.parse(localStorage.getItem("calendar"))
   const [data, setData] = useState({})
-    const dispatch = useDispatch()
-    const { id } = useParams()
-    const { airports } = useSelector(store => store.FlightReducer)
-    console.log(airports)
-    useEffect(() => {
+  const dispatch = useDispatch()
+  const { id } = useParams()
+  const { airports } = useSelector(store => store.FlightReducer)
+  console.log(airports)
+  useEffect(() => {
     //    const data= dispatch(getData())
-        // const data = airports.find(el => el.id == +id)
-        // setData(data)
-        axios.get(`https://makethejourneyhard.cyclic.app/airports/${id}`).then(res=>setData(res.data))
-    }, [])
+    // const data = airports.find(el => el.id == +id)
+    // setData(data)
+    axios.get(`https://makethejourneyhard.cyclic.app/airports/${id}`).then(res => setData(res.data))
+  }, [])
   return (
     <>
-    <ConstNav/>
+      <ConstNav />
       <SingleProHeader />
-
-      <div
-        style={{
-          width: "80%",
-          height: "auto",
-          border: "1px solid blue",
-          display: "flex",
-          alignItems: "center",
-          margin: "auto",
-          justifyContent: "space-between",
-          marginTop: "20px",
-        }}>
-        {/* Left */}
+    <div style={{
+      width: "80%",
+      height: "auto",
+      border: "1px solid blue",
+      margin: "auto",
+      marginTop: "20px",
+    }}>
         <div
           style={{
-            width: "75%",
-            height: "680px",
+            width: "100%",
+            // height: "680px",
             boxShadow:
               "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             display: "flex",
@@ -59,7 +64,7 @@ export function SingleProduct() {
               margin: "auto",
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-              height: "230px",
+              // height: "230px",
               display: "flex",
               flexDirection: "column",
             }}>
@@ -159,7 +164,7 @@ export function SingleProduct() {
                   }}>
                   <div
                     style={{
-                      height: "12px",
+                      // height: "12px",
                       width: " 12px",
                       border: "1px solid grey",
                       borderRadius: "50%",
@@ -167,14 +172,14 @@ export function SingleProduct() {
                     }}></div>
                   <div
                     style={{
-                      height: "38px",
+                      // height: "38px",
                       width: "0px",
                       border: "1px dashed grey",
                       marginLeft: "5px",
                     }}></div>
                   <div
                     style={{
-                      height: "10px",
+                      // height: "10px",
                       width: " 12px",
                       border: "1px solid grey",
                       borderRadius: "50%",
@@ -230,13 +235,13 @@ export function SingleProduct() {
               margin: "auto",
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-              height: "200px",
+              // height: "200px",
             }}>
             <img
               style={{
                 width: "100%",
 
-                height: "200px",
+                // height: "200px",
               }}
               src={booking}
             />
@@ -247,23 +252,25 @@ export function SingleProduct() {
               margin: "auto",
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-              height: "200px",
+              // height: "200px",
             }}>
             <img
               style={{
                 width: "100%",
 
-                height: "200px",
+                // height: "200px",
               }}
               src={booking2}
             />
           </div>
         </div>
-        {/* Right */}
-        <div
+      </div>
+      <div
           style={{
-            width: "23%",
-            height: "680px",
+            width: "80%",
+            display:"flex",
+            margin:"auto",
+            // height: "680px",
             boxShadow:
               "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
           }}>
@@ -274,6 +281,7 @@ export function SingleProduct() {
               width: "90%",
               margin: "auto",
               marginTop: "10px",
+              // height:"310px",
             }}>
             <h2 style={{ width: "90%", margin: "auto", marginBottom: "10px" }}>
               Fare Summary
@@ -329,26 +337,25 @@ export function SingleProduct() {
               </div>
             </div>
           </div>
-          <div style={{ width: "90%", margin: "auto", paddingTop: "10px" }}>
+          <div style={{width: "90%", margin: "auto"}}>
             <img
-              style={{ width: "100%", margin: "auto" }}
-              src="https://promos.makemytrip.com/notification/xhdpi//Air-India-116x116-29032023.jpg?im=Resize=(134,134)"
+              style={{ width: "100%", margin: "auto",height:"320px" }}
+              src="https://img.freepik.com/free-vector/flat-airline-service-company-social-media-cover-template_23-2149660874.jpg?w=1380&t=st=1684120233~exp=1684120833~hmac=35819586b7f18812ec65812a8975db1fa58c79b35803142172b19b67d42868f1"
             />
-            <Link href="/ticket"><button style={{
-               height:" 40px",
-               width: "150px",
+          </div>
+          
+        </div>
+        <Link href="/ticket"><button style={{
                backgroundColor:"#26a0ff",
                borderRadius: "20px",
                color: "white",
-               lineHeight: "35px",
               textAlign:"center",
-              marginTop:"2rem",
-              marginLeft:"3.5rem",
+              padding:"10px",
+              display:"block",
+              margin:"auto",
+              marginTop:"10px"
             }}>Continue</button></Link>
-          </div>
-        </div>
-      </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

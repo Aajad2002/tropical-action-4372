@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./ContactForm.module.css";
+// import styles from "./ContactForm.module.css";
 import { BookingDetails } from "./BookingDetails";
 export const Form = () => {
   const [userData,setUserData]=useState({})
@@ -12,40 +12,26 @@ export const Form = () => {
   }
   return (
     <>
-    <div className={styles.FormDiv}>
+    <div>
       <div
         style={{
           width: "100%",
-          display: "grid",
-          gridTemplateColumns: "auto auto",
-          textAlign: "left",
+          display: "flex",
+          justifyContent:"space-between",
         }}
       >
-        <h2 style={{ marginLeft: "-5%" }}>ADULT</h2>
-        <p style={{ marginLeft: "75%", color: "aquamarine" }}>1/1 Selected</p>
+        <h2>ADULT</h2>
+        <p style={{color: "aquamarine" }}>1/1 Selected</p>
       </div>
       <div>
-        <div className={styles.shading}>
+        <div>
           <div
             style={{
               width: "100%",
-              display: "grid",
-              gridTemplateColumns: "10% 70% 20%",
-              textAlign: "left",
             }}
           >
             <span><input type="checkbox"></input></span>
-            <span
-              style={{
-                fontWeight: "900",
-                fontSize: "larger",
-                marginTop: "-1%",
-                marginLeft: "-5%",
-              }}
-            >
-              ADULT 1
-            </span>
-            <span className={styles.incomplete}>INCOMPLETE</span>
+            <span >INCOMPLETE</span>
           </div>
           <p style={{ fontSize: "smaller", fontWeight: "bold" }}>
             IMPORTANT: Enter your name as it is mentioned on your passport or
@@ -69,7 +55,7 @@ export const Form = () => {
             </div>
           </div>
         </div>
-        <button onClick={handleAdd} className={styles.addAdult}>
+        <button onClick={handleAdd}>
           +ADD ADULT
         </button>
       </div>

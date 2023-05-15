@@ -48,26 +48,6 @@ const FlightSideBar = () => {
   }, [category, types,order,page])
   return (
     <div style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px", backgroundColor: "white", borderRadius: "5px", padding: "1rem", width: "20%",height:"700px" }}>
-      <DIV>
-        <h3>Popular Filters</h3>
-        <div>
-          <input type="checkbox" value="No stop" checked={category.includes("No stop")} onChange={handleChange} />
-          <label>Non Stop</label>
-        </div>
-        <div>
-          <input type="checkbox" value="Morning Departures" checked={category.includes("Morning Departures")} onChange={handleChange} />
-          <label>Morning Departures</label>
-        </div>
-        <div>
-          <input type="checkbox" value="IndiGo" checked={category.includes("IndiGo")} onChange={handleChange} />
-          <label>IndiGo</label>
-        </div>
-        <div>
-          <input type="checkbox" value="vistara" checked={category.includes("vistara")} onChange={handleChange} />
-          <label>Vistara</label>
-        </div>
-        <hr />
-      </DIV>
       <DIV onChange={handleSort}>
       <h3>Price</h3>
       <div>
